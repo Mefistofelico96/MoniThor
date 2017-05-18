@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		727EB7A01EC9E02E004ECC4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727EB79F1EC9E02E004ECC4F /* AppDelegate.swift */; };
 		727EB7A21EC9E02E004ECC4F /* ViewControllerHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727EB7A11EC9E02E004ECC4F /* ViewControllerHome.swift */; };
-		727EB7A51EC9E02E004ECC4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 727EB7A31EC9E02E004ECC4F /* Main.storyboard */; };
 		727EB7A71EC9E02E004ECC4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 727EB7A61EC9E02E004ECC4F /* Assets.xcassets */; };
 		727EB7AA1EC9E02E004ECC4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 727EB7A81EC9E02E004ECC4F /* LaunchScreen.storyboard */; };
 		DF097B6C1ECC75AE005CF694 /* TableViewCellPowerStrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF097B6B1ECC75AE005CF694 /* TableViewCellPowerStrip.swift */; };
 		DF097B6E1ECC79CB005CF694 /* TableViewCellPowerStripDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF097B6D1ECC79CB005CF694 /* TableViewCellPowerStripDetails.swift */; };
 		DF097B701ECC827C005CF694 /* CollectionViewCellCathegories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF097B6F1ECC827C005CF694 /* CollectionViewCellCathegories.swift */; };
+		DF097B771ECDED3D005CF694 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF097B751ECDED3D005CF694 /* Main.storyboard */; };
+		DF097B791ECDF207005CF694 /* TableViewCellHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF097B781ECDF207005CF694 /* TableViewCellHome.swift */; };
+		DF097B7B1ECDF265005CF694 /* TableViewCellSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF097B7A1ECDF265005CF694 /* TableViewCellSettings.swift */; };
 		DF86EF0A1ECB476400520766 /* ViewControllerPowerStrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF86EF091ECB476400520766 /* ViewControllerPowerStrip.swift */; };
 		DF86EF0C1ECB47BE00520766 /* ViewControllerPowerStripDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF86EF0B1ECB47BE00520766 /* ViewControllerPowerStripDetails.swift */; };
 		DF86EF0E1ECB480100520766 /* ViewControllerCathegories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF86EF0D1ECB480100520766 /* ViewControllerCathegories.swift */; };
@@ -27,13 +29,15 @@
 		727EB79C1EC9E02E004ECC4F /* Monithor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monithor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		727EB79F1EC9E02E004ECC4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		727EB7A11EC9E02E004ECC4F /* ViewControllerHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHome.swift; sourceTree = "<group>"; };
-		727EB7A41EC9E02E004ECC4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		727EB7A61EC9E02E004ECC4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		727EB7A91EC9E02E004ECC4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		727EB7AB1EC9E02E004ECC4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF097B6B1ECC75AE005CF694 /* TableViewCellPowerStrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellPowerStrip.swift; sourceTree = "<group>"; };
 		DF097B6D1ECC79CB005CF694 /* TableViewCellPowerStripDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellPowerStripDetails.swift; sourceTree = "<group>"; };
 		DF097B6F1ECC827C005CF694 /* CollectionViewCellCathegories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCellCathegories.swift; sourceTree = "<group>"; };
+		DF097B761ECDED3D005CF694 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DF097B781ECDF207005CF694 /* TableViewCellHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellHome.swift; sourceTree = "<group>"; };
+		DF097B7A1ECDF265005CF694 /* TableViewCellSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellSettings.swift; sourceTree = "<group>"; };
 		DF86EF091ECB476400520766 /* ViewControllerPowerStrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPowerStrip.swift; sourceTree = "<group>"; };
 		DF86EF0B1ECB47BE00520766 /* ViewControllerPowerStripDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPowerStripDetails.swift; sourceTree = "<group>"; };
 		DF86EF0D1ECB480100520766 /* ViewControllerCathegories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerCathegories.swift; sourceTree = "<group>"; };
@@ -76,8 +80,8 @@
 				DF86EF061ECB472C00520766 /* Model */,
 				DF86EF071ECB473D00520766 /* View */,
 				DF86EF081ECB474500520766 /* Controller */,
-				727EB7A31EC9E02E004ECC4F /* Main.storyboard */,
 				727EB7A61EC9E02E004ECC4F /* Assets.xcassets */,
+				DF097B751ECDED3D005CF694 /* Main.storyboard */,
 				727EB7A81EC9E02E004ECC4F /* LaunchScreen.storyboard */,
 				727EB7AB1EC9E02E004ECC4F /* Info.plist */,
 			);
@@ -97,6 +101,8 @@
 				DF097B6B1ECC75AE005CF694 /* TableViewCellPowerStrip.swift */,
 				DF097B6D1ECC79CB005CF694 /* TableViewCellPowerStripDetails.swift */,
 				DF097B6F1ECC827C005CF694 /* CollectionViewCellCathegories.swift */,
+				DF097B781ECDF207005CF694 /* TableViewCellHome.swift */,
+				DF097B7A1ECDF265005CF694 /* TableViewCellSettings.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -175,9 +181,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF097B771ECDED3D005CF694 /* Main.storyboard in Resources */,
 				727EB7AA1EC9E02E004ECC4F /* LaunchScreen.storyboard in Resources */,
 				727EB7A71EC9E02E004ECC4F /* Assets.xcassets in Resources */,
-				727EB7A51EC9E02E004ECC4F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +202,8 @@
 				DF86EF141ECB487700520766 /* ViewControllerNewPowerStrip.swift in Sources */,
 				DF86EF0E1ECB480100520766 /* ViewControllerCathegories.swift in Sources */,
 				DF097B6C1ECC75AE005CF694 /* TableViewCellPowerStrip.swift in Sources */,
+				DF097B791ECDF207005CF694 /* TableViewCellHome.swift in Sources */,
+				DF097B7B1ECDF265005CF694 /* TableViewCellSettings.swift in Sources */,
 				DF097B6E1ECC79CB005CF694 /* TableViewCellPowerStripDetails.swift in Sources */,
 				727EB7A01EC9E02E004ECC4F /* AppDelegate.swift in Sources */,
 				DF86EF121ECB485400520766 /* ViewControllerSettings.swift in Sources */,
@@ -205,20 +213,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		727EB7A31EC9E02E004ECC4F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				727EB7A41EC9E02E004ECC4F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		727EB7A81EC9E02E004ECC4F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				727EB7A91EC9E02E004ECC4F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DF097B751ECDED3D005CF694 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF097B761ECDED3D005CF694 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
