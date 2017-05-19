@@ -50,4 +50,5 @@ class AddGeotificationViewController: UIViewController {
     @IBAction private func onZoomToCurrentLocation(sender: AnyObject) {
         mapView.zoomToUserLocation()
     }
+    
 }
