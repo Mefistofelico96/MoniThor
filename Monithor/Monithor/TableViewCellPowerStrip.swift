@@ -22,6 +22,8 @@ class TableViewCellPowerStrip: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.backgroundColor = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

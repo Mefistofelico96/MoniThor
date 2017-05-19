@@ -14,7 +14,7 @@ protocol AddGeotificationsViewControllerDelegate {
     radius: Double, identifier: String, note: String, eventType: EventType)
 }
 
-class AddGeotificationViewController: UIViewController {
+class AddGeotificationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
 
     @IBOutlet var addButton: UIBarButtonItem!
     @IBOutlet var zoomButton: UIBarButtonItem!
@@ -22,10 +22,13 @@ class AddGeotificationViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var radiusCell: RadiusCell!
 
+    @IBOutlet weak var tableView: UITableView!
     var delegate: AddGeotificationsViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
+        self.tableView.backgroundColor? = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
 //        navigationItem.rightBarButtonItems = [addButton, zoomButton]
 //        addButton.isEnabled = false
     }
@@ -49,6 +52,21 @@ class AddGeotificationViewController: UIViewController {
 
     @IBAction private func onZoomToCurrentLocation(sender: AnyObject) {
         mapView.zoomToUserLocation()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let aCell = tableView.dequeueReusableCell(withIdentifier: "radiusCell", for: indexPath) as! RadiusCell
+        
+        return aCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
     
 }

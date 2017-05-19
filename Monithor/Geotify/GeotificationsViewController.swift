@@ -23,7 +23,7 @@ class GeotificationsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.viewDidLoad()
+        self.view.backgroundColor = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
         // 1
         locationManager.delegate = self
         // 2
