@@ -10,6 +10,7 @@ import UIKit
 
 class TableViewCellSettings: UITableViewCell {
 
+    @IBOutlet weak var imageSetting: UIImageView!
     @IBOutlet weak var labelSettingName: UILabel!
     
     override func awakeFromNib() {

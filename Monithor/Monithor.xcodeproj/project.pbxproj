@@ -11,6 +11,7 @@
 		721751131ECF28C800126E41 /* GeotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721751121ECF28C800126E41 /* GeotificationsViewController.swift */; };
 		721751171ECF294800126E41 /* AddGeotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721751161ECF294800126E41 /* AddGeotificationViewController.swift */; };
 		721751191ECF295C00126E41 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721751181ECF295C00126E41 /* Utilities.swift */; };
+		7217511B1ECF39B500126E41 /* RadiusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217511A1ECF39B500126E41 /* RadiusCell.swift */; };
 		727EB7A01EC9E02E004ECC4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727EB79F1EC9E02E004ECC4F /* AppDelegate.swift */; };
 		727EB7A21EC9E02E004ECC4F /* ViewControllerHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727EB7A11EC9E02E004ECC4F /* ViewControllerHome.swift */; };
 		727EB7A71EC9E02E004ECC4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 727EB7A61EC9E02E004ECC4F /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		721751121ECF28C800126E41 /* GeotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeotificationsViewController.swift; path = Geotify/GeotificationsViewController.swift; sourceTree = SOURCE_ROOT; };
 		721751161ECF294800126E41 /* AddGeotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddGeotificationViewController.swift; path = Geotify/AddGeotificationViewController.swift; sourceTree = SOURCE_ROOT; };
 		721751181ECF295C00126E41 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = Geotify/Utilities.swift; sourceTree = SOURCE_ROOT; };
+		7217511A1ECF39B500126E41 /* RadiusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusCell.swift; sourceTree = "<group>"; };
 		727EB79C1EC9E02E004ECC4F /* Monithor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monithor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		727EB79F1EC9E02E004ECC4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		727EB7A11EC9E02E004ECC4F /* ViewControllerHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHome.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				DF097B6F1ECC827C005CF694 /* CollectionViewCellCathegories.swift */,
 				DF097B781ECDF207005CF694 /* TableViewCellHome.swift */,
 				DF097B7A1ECDF265005CF694 /* TableViewCellSettings.swift */,
+				7217511A1ECF39B500126E41 /* RadiusCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF86EF0C1ECB47BE00520766 /* ViewControllerPowerStripDetails.swift in Sources */,
+				7217511B1ECF39B500126E41 /* RadiusCell.swift in Sources */,
 				DF097B701ECC827C005CF694 /* CollectionViewCellCathegories.swift in Sources */,
 				DF86EF101ECB482900520766 /* ViewControllerDeviceDetails.swift in Sources */,
 				721751111ECF28C200126E41 /* Geotification.swift in Sources */,

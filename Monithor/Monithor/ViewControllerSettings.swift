@@ -10,7 +10,6 @@ import UIKit
 
 class ViewControllerSettings: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    
     @IBOutlet weak var labelEnergyMonth: UILabel!
     @IBOutlet weak var labelEnergyWeek: UILabel!
     @IBOutlet weak var labelEnergyDay: UILabel!
@@ -28,20 +27,21 @@ class ViewControllerSettings: UIViewController, UITableViewDataSource, UITableVi
         self.view.backgroundColor = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
         self.tableViewSettings.backgroundColor = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let aCell = tableView.dequeueReusableCell(withIdentifier: "settingsCell", for: indexPath) as! TableViewCellSettings
-        
         return aCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if indexPath.row == 0 {
+            self.performSegue(withIdentifier: "geofenceSegue", sender: indexPath.row)
+        }
     }
     
     override func didReceiveMemoryWarning() {
