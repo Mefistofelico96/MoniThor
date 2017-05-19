@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		721751111ECF28C200126E41 /* Geotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721751101ECF28C200126E41 /* Geotification.swift */; };
+		721751131ECF28C800126E41 /* GeotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721751121ECF28C800126E41 /* GeotificationsViewController.swift */; };
+		721751171ECF294800126E41 /* AddGeotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721751161ECF294800126E41 /* AddGeotificationViewController.swift */; };
+		721751191ECF295C00126E41 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721751181ECF295C00126E41 /* Utilities.swift */; };
 		727EB7A01EC9E02E004ECC4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727EB79F1EC9E02E004ECC4F /* AppDelegate.swift */; };
 		727EB7A21EC9E02E004ECC4F /* ViewControllerHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727EB7A11EC9E02E004ECC4F /* ViewControllerHome.swift */; };
 		727EB7A71EC9E02E004ECC4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 727EB7A61EC9E02E004ECC4F /* Assets.xcassets */; };
@@ -27,6 +31,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		721751101ECF28C200126E41 /* Geotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Geotification.swift; path = Geotify/Geotification.swift; sourceTree = SOURCE_ROOT; };
+		721751121ECF28C800126E41 /* GeotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeotificationsViewController.swift; path = Geotify/GeotificationsViewController.swift; sourceTree = SOURCE_ROOT; };
+		721751161ECF294800126E41 /* AddGeotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddGeotificationViewController.swift; path = Geotify/AddGeotificationViewController.swift; sourceTree = SOURCE_ROOT; };
+		721751181ECF295C00126E41 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = Geotify/Utilities.swift; sourceTree = SOURCE_ROOT; };
 		727EB79C1EC9E02E004ECC4F /* Monithor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monithor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		727EB79F1EC9E02E004ECC4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		727EB7A11EC9E02E004ECC4F /* ViewControllerHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHome.swift; sourceTree = "<group>"; };
@@ -59,6 +67,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7217510F1ECF28B500126E41 /* GeoFence */ = {
+			isa = PBXGroup;
+			children = (
+				721751181ECF295C00126E41 /* Utilities.swift */,
+				721751161ECF294800126E41 /* AddGeotificationViewController.swift */,
+				721751121ECF28C800126E41 /* GeotificationsViewController.swift */,
+				721751101ECF28C200126E41 /* Geotification.swift */,
+			);
+			name = GeoFence;
+			sourceTree = "<group>";
+		};
 		727EB7931EC9E02E004ECC4F = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +97,7 @@
 		727EB79E1EC9E02E004ECC4F /* Monithor */ = {
 			isa = PBXGroup;
 			children = (
+				7217510F1ECF28B500126E41 /* GeoFence */,
 				727EB79F1EC9E02E004ECC4F /* AppDelegate.swift */,
 				DF86EF061ECB472C00520766 /* Model */,
 				DF86EF071ECB473D00520766 /* View */,
@@ -200,6 +220,10 @@
 				DF86EF0C1ECB47BE00520766 /* ViewControllerPowerStripDetails.swift in Sources */,
 				DF097B701ECC827C005CF694 /* CollectionViewCellCathegories.swift in Sources */,
 				DF86EF101ECB482900520766 /* ViewControllerDeviceDetails.swift in Sources */,
+				721751111ECF28C200126E41 /* Geotification.swift in Sources */,
+				721751131ECF28C800126E41 /* GeotificationsViewController.swift in Sources */,
+				721751171ECF294800126E41 /* AddGeotificationViewController.swift in Sources */,
+				721751191ECF295C00126E41 /* Utilities.swift in Sources */,
 				DF86EF0A1ECB476400520766 /* ViewControllerPowerStrip.swift in Sources */,
 				DF097B7D1ECF1990005CF694 /* ViewControllerSettingsDetails.swift in Sources */,
 				727EB7A21EC9E02E004ECC4F /* ViewControllerHome.swift in Sources */,
