@@ -10,6 +10,9 @@ import UIKit
 
 class ViewControllerPowerStripDetails: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var labelPowerStripName: UILabel!
+    @IBOutlet weak var labelPowerStripRoom: UILabel!
+    @IBOutlet weak var labelKWhUsed: UILabel!
     @IBOutlet weak var tableViewPowerStripDetails: UITableView!
     
     override func viewDidLoad() {
@@ -35,7 +38,6 @@ class ViewControllerPowerStripDetails: UIViewController, UITableViewDataSource, 
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 }

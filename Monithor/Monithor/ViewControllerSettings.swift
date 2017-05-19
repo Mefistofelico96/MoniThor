@@ -10,6 +10,15 @@ import UIKit
 
 class ViewControllerSettings: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    
+    @IBOutlet weak var labelEnergyMonth: UILabel!
+    @IBOutlet weak var labelEnergyWeek: UILabel!
+    @IBOutlet weak var labelEnergyDay: UILabel!
+    
+    @IBOutlet weak var labelMoneyMonth: UILabel!
+    @IBOutlet weak var labelMoneyWeek: UILabel!
+    @IBOutlet weak var labelMoneyDay: UILabel!
+    
     @IBOutlet weak var tableViewSettings: UITableView!
     
     override func viewDidLoad() {
@@ -37,7 +46,6 @@ class ViewControllerSettings: UIViewController, UITableViewDataSource, UITableVi
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 }

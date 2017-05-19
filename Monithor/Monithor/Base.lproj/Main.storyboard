@@ -138,6 +138,14 @@
                                                 </switch>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="connectedTime" destination="zz7-bz-3bl" id="BcL-Tf-kSh"/>
+                                            <outlet property="deviceImage" destination="afy-tA-bow" id="CDl-HG-zBu"/>
+                                            <outlet property="deviceName" destination="TPC-Fe-E5E" id="5Cg-2A-ftD"/>
+                                            <outlet property="kwhUsed" destination="Dnf-lc-yUh" id="Ngc-8g-s7K"/>
+                                            <outlet property="timerBegin" destination="DV1-O7-fq8" id="C3L-h6-spz"/>
+                                            <outlet property="timerEnd" destination="kNb-MP-8R1" id="x6S-3R-ehc"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -150,6 +158,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="cUF-bT-bEb"/>
                     <connections>
+                        <outlet property="imageUser" destination="94B-x8-bB9" id="ScM-y7-c0q"/>
+                        <outlet property="labelNumberPowerStrip" destination="eBX-VA-YMF" id="nbI-T2-F0a"/>
+                        <outlet property="labelUserName" destination="AqA-pd-OTj" id="3Kv-2n-V4h"/>
                         <outlet property="tableViewHome" destination="w6X-sg-7Zz" id="c5M-Lg-eUV"/>
                     </connections>
                 </viewController>
@@ -233,6 +244,16 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageSocket1" destination="0P3-4D-VhO" id="7mH-zk-dOt"/>
+                                            <outlet property="imageSocket2" destination="CTc-BN-KHv" id="p56-o9-wcc"/>
+                                            <outlet property="imageSocket3" destination="IFJ-B0-wUp" id="jKc-KF-kBE"/>
+                                            <outlet property="imageSocket4" destination="vpx-eY-gVZ" id="t6L-c0-ttV"/>
+                                            <outlet property="imageSocket5" destination="IZW-yO-jWf" id="pgI-EM-nGk"/>
+                                            <outlet property="numberConnectedDevice" destination="RtA-Ne-yWp" id="mA3-Fe-64K"/>
+                                            <outlet property="powerStripName" destination="L8w-2A-AOb" id="23f-2y-brb"/>
+                                            <outlet property="powerStripRoom" destination="SLA-q0-GN8" id="GG7-hC-Ivw"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -400,6 +421,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="labelKWhUsed" destination="cNt-7y-Tpc" id="BMu-jM-sal"/>
+                        <outlet property="labelPowerStripName" destination="0Pg-TD-L88" id="CjN-CW-D4b"/>
+                        <outlet property="labelPowerStripRoom" destination="pbo-Nd-U3M" id="wMT-Cl-AnS"/>
                         <outlet property="tableViewPowerStripDetails" destination="rS3-He-3UH" id="cBG-Ir-yvj"/>
                     </connections>
                 </viewController>
@@ -678,6 +702,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labelSettingName" destination="BFu-L6-5yo" id="iHD-Bi-KnF"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -690,6 +717,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="6LU-or-WvG"/>
                     <connections>
+                        <outlet property="labelEnergyDay" destination="hfB-Cb-zu0" id="hNj-m2-Jqb"/>
+                        <outlet property="labelEnergyMonth" destination="VAC-AV-0ru" id="Z9G-No-YGl"/>
+                        <outlet property="labelEnergyWeek" destination="J9q-Rs-mnH" id="Ji3-7h-n9Q"/>
+                        <outlet property="labelMoneyDay" destination="Thy-Wc-NCf" id="sDH-5g-fMK"/>
+                        <outlet property="labelMoneyMonth" destination="1C9-iq-TWc" id="TbV-c6-930"/>
+                        <outlet property="labelMoneyWeek" destination="VEz-NM-i7R" id="Y5j-Rb-797"/>
                         <outlet property="tableViewSettings" destination="yoq-2Q-UlM" id="ntj-qU-KMr"/>
                     </connections>
                 </viewController>
@@ -744,6 +777,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Dx-4a-P19" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1832.8" y="1405.5472263868066"/>
+        </scene>
+        <!--View Controller Settings Details-->
+        <scene sceneID="pCA-uT-llH">
+            <objects>
+                <viewController id="Yed-20-oxW" customClass="ViewControllerSettingsDetails" customModule="Monithor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pBG-0N-0s3"/>
+                        <viewControllerLayoutGuide type="bottom" id="5ls-fo-Kdb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vsm-bx-iZK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ye9-3d-5G7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2983" y="1406"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="whH-yp-vbJ">
