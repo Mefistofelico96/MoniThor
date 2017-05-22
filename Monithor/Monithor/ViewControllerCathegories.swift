@@ -39,6 +39,7 @@ class ViewControllerCathegories: UIViewController, UICollectionViewDelegate, UIC
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
         self.collectionView.backgroundColor = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
+        setCathegory()
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -48,7 +49,8 @@ class ViewControllerCathegories: UIViewController, UICollectionViewDelegate, UIC
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let aCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cathegoriesCell", for: indexPath) as! CollectionViewCellCathegories
-        
+        aCell.labelNameCathegory.text = plugTypes[indexPath.row].name
+        aCell.imageCathegory.image = plugTypes[indexPath.row].image
         return aCell
     }
     

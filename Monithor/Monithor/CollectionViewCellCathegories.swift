@@ -9,5 +9,6 @@
 import UIKit
 
 class CollectionViewCellCathegories: UICollectionViewCell {
-    
+    @IBOutlet weak var labelNameCathegory: UILabel!
+    @IBOutlet weak var imageCathegory: UIImageView!
 }
