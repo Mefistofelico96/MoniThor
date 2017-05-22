@@ -147,6 +147,7 @@
                         <outlet property="labelNumberPowerStrip" destination="eBX-VA-YMF" id="nbI-T2-F0a"/>
                         <outlet property="labelUserName" destination="AqA-pd-OTj" id="3Kv-2n-V4h"/>
                         <outlet property="tableViewHome" destination="w6X-sg-7Zz" id="c5M-Lg-eUV"/>
+                        <segue destination="mzY-gf-aJx" kind="show" identifier="showPowerStripDetails" id="tjb-wh-e11"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -250,15 +251,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Power Strip" id="lq2-ye-oem">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ctt-i3-LfR"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ctt-i3-LfR">
+                            <connections>
+                                <segue destination="UIg-Lg-qnN" kind="show" id="met-kD-MLu"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableViewPowerStrip" destination="2vt-Pb-m1R" id="xtf-cr-X8d"/>
+                        <segue destination="mzY-gf-aJx" kind="show" identifier="showPowerStripDetails" id="9VG-6l-V9b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ud5-mT-xSy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1376.8" y="650.82458770614699"/>
+            <point key="canvasLocation" x="1377" y="651"/>
         </scene>
         <!--View Controller Power Strip Details-->
         <scene sceneID="vpL-57-T8I">
@@ -402,11 +408,12 @@
                         <outlet property="labelPowerStripName" destination="0Pg-TD-L88" id="CjN-CW-D4b"/>
                         <outlet property="labelPowerStripRoom" destination="pbo-Nd-U3M" id="wMT-Cl-AnS"/>
                         <outlet property="tableViewPowerStripDetails" destination="rS3-He-3UH" id="cBG-Ir-yvj"/>
+                        <segue destination="PtE-yX-8Ds" kind="show" identifier="showDeviceDetails" id="JLW-ke-ePK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VGv-tM-DhK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="856.79999999999995" y="1406.4467766116943"/>
+            <point key="canvasLocation" x="882" y="1406"/>
         </scene>
         <!--View Controller Device Details-->
         <scene sceneID="sCP-PL-rBY">
@@ -532,17 +539,21 @@
                                 <color key="textColor" red="0.20784313725490194" green="0.52549019607843139" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dLC-d9-tjD">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njS-El-eIG">
                                 <rect key="frame" x="289" y="81" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <state key="normal" title="Button" image="Uncath"/>
+                                <connections>
+                                    <segue destination="fSO-cH-GYe" kind="show" identifier="showCathegories" id="8Cc-C1-I24"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qXQ-qW-ZeA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1344.8" y="2168.3658170914546"/>
+            <point key="canvasLocation" x="881" y="2205"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Pwm-nY-KP1">
@@ -767,7 +778,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Dx-4a-P19" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1832.8" y="1405.5472263868066"/>
+            <point key="canvasLocation" x="1734" y="1406"/>
         </scene>
         <!--View Controller Settings Details-->
         <scene sceneID="pCA-uT-llH">
@@ -785,7 +796,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ye9-3d-5G7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2983" y="1406"/>
+            <point key="canvasLocation" x="2449" y="1406"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="whH-yp-vbJ">
@@ -947,8 +958,8 @@
                                 <rect key="frame" x="16" y="72" width="343" height="538"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MUI-5J-CNO">
-                                    <size key="itemSize" width="50" height="50"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="20" id="MUI-5J-CNO">
+                                    <size key="itemSize" width="100" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -960,8 +971,25 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zWN-MK-DBj">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utI-z6-3hH">
+                                                    <rect key="frame" x="0.0" y="79" width="100" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </view>
                                         <size key="customSize" width="100" height="100"/>
+                                        <connections>
+                                            <outlet property="imageCathegory" destination="zWN-MK-DBj" id="8BT-op-fQp"/>
+                                            <outlet property="labelNameCathegory" destination="utI-z6-3hH" id="6Vf-G3-Pf5"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -978,7 +1006,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xt0-cp-97o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2237.5999999999999" y="2167.4662668665669"/>
+            <point key="canvasLocation" x="881" y="2991"/>
         </scene>
         <!--Power Strip-->
         <scene sceneID="PsN-4C-oiS">
@@ -1052,4 +1080,7 @@
         <image name="Uncath" width="100" height="100"/>
         <image name="UserImage" width="46" height="46"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="tjb-wh-e11"/>
+    </inferredMetricsTieBreakers>
 </document>

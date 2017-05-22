@@ -33,7 +33,7 @@ class ViewControllerPowerStripDetails: UIViewController, UITableViewDataSource, 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        performSegue(withIdentifier: "showDeviceDetails", sender: nil)
     }
     
     override func didReceiveMemoryWarning() {
