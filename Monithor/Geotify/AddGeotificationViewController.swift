@@ -21,14 +21,17 @@ class AddGeotificationViewController: UIViewController, UITableViewDataSource, U
     @IBOutlet weak var eventTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var navigationBar: UINavigationBar!
     
-    let radiusCell = RadiusCell()
+    var radiusCell = RadiusCell()
+    
     var delegate: AddGeotificationsViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
         self.tableView.backgroundColor? = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
+        self.navigationBar.backgroundColor? = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
         navigationItem.rightBarButtonItems = [addButton, zoomButton]
         addButton.isEnabled = true
     }
@@ -41,16 +44,19 @@ class AddGeotificationViewController: UIViewController, UITableViewDataSource, U
 //        dismiss(animated: true, completion: nil)
 //    }
 
-    @IBAction private func onAdd (sender: AnyObject) {
+    @IBAction private func onAdd (sender: UIBarButtonItem) {
+        let rowToSelect = IndexPath(row: 0, section: 0)
+        radiusCell = tableView.cellForRow(at: rowToSelect) as! RadiusCell
+
         let coordinate = mapView.centerCoordinate
-        let radius = Double(radiusCell.radiusTextField.text!) ?? 0
+        let radius = Double(radiusCell.radiusTextField.text!)!
         let identifier = NSUUID().uuidString
         let note = radiusCell.noteTextField.text
         let eventType: EventType = (eventTypeSegmentedControl.selectedSegmentIndex == 0) ? .onEntry : .onExit
         delegate?.addGeotificationViewController(controller: self, didAddCoordinate: coordinate, radius: radius, identifier: identifier, note: note!, eventType: eventType)
     }
 
-    @IBAction private func onZoomToCurrentLocation (sender: AnyObject) {
+    @IBAction private func onZoomToCurrentLocation (sender: UIBarButtonItem) {
         mapView.zoomToUserLocation()
     }
     

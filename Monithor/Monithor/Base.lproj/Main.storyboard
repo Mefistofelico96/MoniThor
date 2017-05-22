@@ -932,7 +932,8 @@
                         <outlet property="addButton" destination="Ysd-IN-lDo" id="Lea-KM-8M3"/>
                         <outlet property="eventTypeSegmentedControl" destination="48W-mv-iSi" id="4Xo-pk-ZfT"/>
                         <outlet property="mapView" destination="ZG1-EY-BX0" id="Kau-U7-Oq6"/>
-                        <outlet property="tableView" destination="Xzm-OD-j4W" id="bjY-aF-pzQ"/>
+                        <outlet property="navigationBar" destination="s3v-3j-IUh" id="k4k-Yh-DgX"/>
+                        <outlet property="tableView" destination="Xzm-OD-j4W" id="IyJ-Qc-9Xh"/>
                         <outlet property="zoomButton" destination="2pa-c4-Q6l" id="7Vq-VY-W8w"/>
                     </connections>
                 </viewController>
