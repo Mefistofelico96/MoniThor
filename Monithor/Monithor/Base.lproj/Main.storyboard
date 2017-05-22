@@ -820,7 +820,6 @@
         <!--Geofence-->
         <scene sceneID="kBA-m3-3d5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Udk-6w-TOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Geofence" id="TGW-Ll-Xrf" customClass="AddGeotificationViewController" customModule="Monithor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vvl-t6-0qf"/>
@@ -917,8 +916,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems>
-                        <barButtonItem systemItem="add" id="Ysd-IN-lDo"/>
-                        <barButtonItem image="GPS" id="2pa-c4-Q6l"/>
+                        <barButtonItem systemItem="add" id="Ysd-IN-lDo">
+                            <connections>
+                                <action selector="onAddWithSender:" destination="TGW-Ll-Xrf" id="ypQ-hV-1TE"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem image="GPS" id="2pa-c4-Q6l">
+                            <connections>
+                                <action selector="onZoomToCurrentLocationWithSender:" destination="TGW-Ll-Xrf" id="fUh-qV-Ei0"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -929,6 +936,7 @@
                         <outlet property="zoomButton" destination="2pa-c4-Q6l" id="7Vq-VY-W8w"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Udk-6w-TOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3517.5999999999999" y="650.82458770614699"/>
         </scene>

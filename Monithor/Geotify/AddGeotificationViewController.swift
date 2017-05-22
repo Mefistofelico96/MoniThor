@@ -20,33 +20,28 @@ class AddGeotificationViewController: UIViewController, UITableViewDataSource, U
     @IBOutlet var zoomButton: UIBarButtonItem!
     @IBOutlet weak var eventTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var mapView: MKMapView!
-    
-    let radiusCell = RadiusCell()
-
     @IBOutlet weak var tableView: UITableView!
     
+    let radiusCell = RadiusCell()
     var delegate: AddGeotificationsViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view.backgroundColor = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
         self.tableView.backgroundColor? = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
-        
         navigationItem.rightBarButtonItems = [addButton, zoomButton]
-        zoomButton.isEnabled = true
         addButton.isEnabled = true
     }
 
-    @IBAction func textFieldEditingChanged(sender: UITextField) {
-        addButton.isEnabled = radiusCell.radiusTextField.text!.isEmpty && radiusCell.noteTextField.text!.isEmpty
-    }
+//    @IBAction func textFieldEditingChanged (sender: UITextField) {
+//        addButton.isEnabled = radiusCell.radiusTextField!.text!.isEmpty && radiusCell.noteTextField!.text!.isEmpty
+//    }
 
-    @IBAction func onCancel(sender: AnyObject) {
-        dismiss(animated: true, completion: nil)
-    }
+//    @IBAction func onCancel (sender: AnyObject) {
+//        dismiss(animated: true, completion: nil)
+//    }
 
-    @IBAction private func onAdd(sender: AnyObject) {
+    @IBAction private func onAdd (sender: AnyObject) {
         let coordinate = mapView.centerCoordinate
         let radius = Double(radiusCell.radiusTextField.text!) ?? 0
         let identifier = NSUUID().uuidString
@@ -55,18 +50,16 @@ class AddGeotificationViewController: UIViewController, UITableViewDataSource, U
         delegate?.addGeotificationViewController(controller: self, didAddCoordinate: coordinate, radius: radius, identifier: identifier, note: note!, eventType: eventType)
     }
 
-    @IBAction private func onZoomToCurrentLocation(sender: AnyObject) {
+    @IBAction private func onZoomToCurrentLocation (sender: AnyObject) {
         mapView.zoomToUserLocation()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView (_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+    func tableView (_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let aCell = tableView.dequeueReusableCell(withIdentifier: "radiusCell", for: indexPath) as! RadiusCell
-        
         return aCell
     }
     

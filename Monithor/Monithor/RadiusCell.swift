@@ -10,8 +10,8 @@ import UIKit
 
 class RadiusCell: UITableViewCell {
     
-    @IBOutlet weak var radiusTextField: UITextField!
-    @IBOutlet weak var noteTextField: UITextField!
+    @IBOutlet public weak var radiusTextField: UITextField!
+    @IBOutlet public weak var noteTextField: UITextField!
 
     override func awakeFromNib() {
         super.awakeFromNib()
