@@ -23,6 +23,7 @@
 		DF097B791ECDF207005CF694 /* TableViewCellHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF097B781ECDF207005CF694 /* TableViewCellHome.swift */; };
 		DF097B7B1ECDF265005CF694 /* TableViewCellSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF097B7A1ECDF265005CF694 /* TableViewCellSettings.swift */; };
 		DF097B7D1ECF1990005CF694 /* ViewControllerSettingsDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF097B7C1ECF1990005CF694 /* ViewControllerSettingsDetails.swift */; };
+		DF62E0021ED30C190060BD73 /* Cathegories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF62E0011ED30C190060BD73 /* Cathegories.swift */; };
 		DF86EF0A1ECB476400520766 /* ViewControllerPowerStrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF86EF091ECB476400520766 /* ViewControllerPowerStrip.swift */; };
 		DF86EF0C1ECB47BE00520766 /* ViewControllerPowerStripDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF86EF0B1ECB47BE00520766 /* ViewControllerPowerStripDetails.swift */; };
 		DF86EF0E1ECB480100520766 /* ViewControllerCathegories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF86EF0D1ECB480100520766 /* ViewControllerCathegories.swift */; };
@@ -50,6 +51,7 @@
 		DF097B781ECDF207005CF694 /* TableViewCellHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellHome.swift; sourceTree = "<group>"; };
 		DF097B7A1ECDF265005CF694 /* TableViewCellSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellSettings.swift; sourceTree = "<group>"; };
 		DF097B7C1ECF1990005CF694 /* ViewControllerSettingsDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerSettingsDetails.swift; sourceTree = "<group>"; };
+		DF62E0011ED30C190060BD73 /* Cathegories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cathegories.swift; sourceTree = "<group>"; };
 		DF86EF091ECB476400520766 /* ViewControllerPowerStrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPowerStrip.swift; sourceTree = "<group>"; };
 		DF86EF0B1ECB47BE00520766 /* ViewControllerPowerStripDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPowerStripDetails.swift; sourceTree = "<group>"; };
 		DF86EF0D1ECB480100520766 /* ViewControllerCathegories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerCathegories.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		DF86EF061ECB472C00520766 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DF62E0011ED30C190060BD73 /* Cathegories.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 			files = (
 				DF86EF0C1ECB47BE00520766 /* ViewControllerPowerStripDetails.swift in Sources */,
 				7217511B1ECF39B500126E41 /* RadiusCell.swift in Sources */,
+				DF62E0021ED30C190060BD73 /* Cathegories.swift in Sources */,
 				DF097B701ECC827C005CF694 /* CollectionViewCellCathegories.swift in Sources */,
 				DF86EF101ECB482900520766 /* ViewControllerDeviceDetails.swift in Sources */,
 				721751111ECF28C200126E41 /* Geotification.swift in Sources */,
