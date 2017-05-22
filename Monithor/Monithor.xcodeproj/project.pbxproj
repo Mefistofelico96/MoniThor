@@ -76,6 +76,7 @@
 				721751161ECF294800126E41 /* AddGeotificationViewController.swift */,
 				721751121ECF28C800126E41 /* GeotificationsViewController.swift */,
 				721751101ECF28C200126E41 /* Geotification.swift */,
+				7217511A1ECF39B500126E41 /* RadiusCell.swift */,
 			);
 			name = GeoFence;
 			sourceTree = "<group>";
@@ -127,7 +128,6 @@
 				DF097B6F1ECC827C005CF694 /* CollectionViewCellCathegories.swift */,
 				DF097B781ECDF207005CF694 /* TableViewCellHome.swift */,
 				DF097B7A1ECDF265005CF694 /* TableViewCellSettings.swift */,
-				7217511A1ECF39B500126E41 /* RadiusCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";

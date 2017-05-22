@@ -152,7 +152,7 @@ extension GeotificationsViewController: AddGeotificationsViewControllerDelegate 
     }
 }
 
-// MARK: - Location Manager Delegate
+// MARK: Location Manager Delegate
 extension GeotificationsViewController: CLLocationManagerDelegate {
   
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
