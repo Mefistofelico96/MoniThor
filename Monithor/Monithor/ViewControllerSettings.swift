@@ -20,21 +20,31 @@ class ViewControllerSettings: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var tableViewSettings: UITableView!
     
+    var settingsType: [Cathegory] = []
+    func setCathegory() {
+        settingsType.append(Cathegory(name: "Geofence", image: #imageLiteral(resourceName: "Geofence")))
+        settingsType.append(Cathegory(name: "Change E-Mail", image: #imageLiteral(resourceName: "ChangeMail")))
+        settingsType.append(Cathegory(name: "Change Pin", image: #imageLiteral(resourceName: "ChangePin")))
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = UIColor(red: 10/255, green: 65/255, blue: 84/255, alpha: 1)
         navigationController?.navigationBar.barTintColor = UIColor(colorLiteralRed: 174/255, green: 227/255, blue: 208/255, alpha: 1)
         self.view.backgroundColor = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
         self.tableViewSettings.backgroundColor = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
+        setCathegory()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return settingsType.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let aCell = tableView.dequeueReusableCell(withIdentifier: "settingsCell", for: indexPath) as! TableViewCellSettings
+        aCell.labelSettingName.text = settingsType[indexPath.row].name
+        aCell.imageSetting.image = settingsType[indexPath.row].image
         return aCell
     }
     
