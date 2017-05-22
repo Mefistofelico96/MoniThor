@@ -13,7 +13,6 @@ class TableViewCellHome: UITableViewCell {
     @IBOutlet weak var deviceImage: UIImageView!
     @IBOutlet weak var deviceName: UILabel!
     @IBOutlet weak var connectedTime: UILabel!
-    @IBOutlet weak var kwhUsed: UILabel!
     @IBOutlet weak var timerBegin: UILabel!
     @IBOutlet weak var timerEnd: UILabel!
     
