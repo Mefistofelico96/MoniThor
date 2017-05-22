@@ -20,17 +20,22 @@ class AddGeotificationViewController: UIViewController, UITableViewDataSource, U
     @IBOutlet var zoomButton: UIBarButtonItem!
     @IBOutlet weak var eventTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var radiusCell: RadiusCell!
+    
+    let radiusCell = RadiusCell()
 
     @IBOutlet weak var tableView: UITableView!
+    
     var delegate: AddGeotificationsViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.view.backgroundColor = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
         self.tableView.backgroundColor? = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
-//        navigationItem.rightBarButtonItems = [addButton, zoomButton]
-//        addButton.isEnabled = false
+        
+        navigationItem.rightBarButtonItems = [addButton, zoomButton]
+        zoomButton.isEnabled = true
+        addButton.isEnabled = true
     }
 
     @IBAction func textFieldEditingChanged(sender: UITextField) {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kHm-pB-jeV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kHm-pB-jeV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -809,6 +809,7 @@
         <!--Geofence-->
         <scene sceneID="kBA-m3-3d5">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Udk-6w-TOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Geofence" id="TGW-Ll-Xrf" customClass="AddGeotificationViewController" customModule="Monithor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vvl-t6-0qf"/>
@@ -886,7 +887,7 @@
                                     <navigationItem id="OCF-Pz-Xks">
                                         <nil key="title"/>
                                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="48W-mv-iSi">
-                                            <rect key="frame" x="35.5" y="7.5" width="304" height="29"/>
+                                            <rect key="frame" x="8" y="7.5" width="359" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
                                                 <segment title="Upon entry"/>
@@ -896,20 +897,27 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Yz-bh-ZSl">
+                                <rect key="frame" x="269" y="14" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems>
-                        <barButtonItem title="Item" id="Ysd-IN-lDo"/>
+                        <barButtonItem systemItem="add" id="Ysd-IN-lDo"/>
+                        <barButtonItem image="GPS" id="2pa-c4-Q6l"/>
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="addButton" destination="Ysd-IN-lDo" id="Lea-KM-8M3"/>
                         <outlet property="eventTypeSegmentedControl" destination="48W-mv-iSi" id="4Xo-pk-ZfT"/>
                         <outlet property="mapView" destination="ZG1-EY-BX0" id="Kau-U7-Oq6"/>
                         <outlet property="tableView" destination="Xzm-OD-j4W" id="bjY-aF-pzQ"/>
+                        <outlet property="zoomButton" destination="2pa-c4-Q6l" id="7Vq-VY-W8w"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Udk-6w-TOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3517.5999999999999" y="650.82458770614699"/>
         </scene>
@@ -1041,6 +1049,7 @@
     <resources>
         <image name="DefaultPSImage" width="50" height="50"/>
         <image name="EnergySaved" width="79" height="80"/>
+        <image name="GPS" width="32" height="32"/>
         <image name="Home" width="24" height="24"/>
         <image name="MoneySaved" width="79" height="80"/>
         <image name="Pin" width="256" height="256"/>
