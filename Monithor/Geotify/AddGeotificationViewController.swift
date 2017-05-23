@@ -39,15 +39,11 @@ class AddGeotificationViewController: UIViewController, UITableViewDataSource, U
 //    @IBAction func textFieldEditingChanged (sender: UITextField) {
 //        addButton.isEnabled = radiusCell.radiusTextField!.text!.isEmpty && radiusCell.noteTextField!.text!.isEmpty
 //    }
-
-//    @IBAction func onCancel (sender: AnyObject) {
-//        dismiss(animated: true, completion: nil)
-//    }
-
+    
     @IBAction private func onAdd (sender: UIBarButtonItem) {
         let rowToSelect = IndexPath(row: 0, section: 0)
         radiusCell = tableView.cellForRow(at: rowToSelect) as! RadiusCell
-
+        
         let coordinate = mapView.centerCoordinate
         let radius = Double(radiusCell.radiusTextField.text!)!
         let identifier = NSUUID().uuidString
