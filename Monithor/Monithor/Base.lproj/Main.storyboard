@@ -721,12 +721,8 @@
                         <outlet property="labelMoneyMonth" destination="1C9-iq-TWc" id="TbV-c6-930"/>
                         <outlet property="labelMoneyWeek" destination="VEz-NM-i7R" id="Y5j-Rb-797"/>
                         <outlet property="tableViewSettings" destination="yoq-2Q-UlM" id="ntj-qU-KMr"/>
-<<<<<<< HEAD
-                        <segue destination="TGW-Ll-Xrf" kind="show" identifier="geofenceSegue" id="VZy-xk-7je"/>
-=======
                         <segue destination="TGW-Ll-Xrf" kind="show" identifier="geofenceSegue" id="MVp-gj-b1F"/>
                         <segue destination="Yed-20-oxW" kind="show" identifier="showSettingsDetails" id="Hh9-ak-Uro"/>
->>>>>>> 62e2d87bb3555de046dd6358944027138ce272e3
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IxR-FK-bNe" userLabel="First Responder" sceneMemberID="firstResponder"/>
