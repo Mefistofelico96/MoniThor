@@ -721,7 +721,7 @@
                         <outlet property="labelMoneyMonth" destination="1C9-iq-TWc" id="TbV-c6-930"/>
                         <outlet property="labelMoneyWeek" destination="VEz-NM-i7R" id="Y5j-Rb-797"/>
                         <outlet property="tableViewSettings" destination="yoq-2Q-UlM" id="ntj-qU-KMr"/>
-                        <segue destination="TGW-Ll-Xrf" kind="show" identifier="geofenceSegue" id="MVp-gj-b1F"/>
+                        <segue destination="TGW-Ll-Xrf" kind="show" identifier="geofenceSegue" id="VZy-xk-7je"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IxR-FK-bNe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -876,15 +876,11 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="noteTextField" destination="PKR-pU-Tbf" id="2cq-Mh-gPZ"/>
-                                            <outlet property="radiusTextField" destination="BVV-L4-aY5" id="7lC-7P-SMT"/>
+                                            <outlet property="noteTextField" destination="PKR-pU-Tbf" id="HnV-98-T02"/>
+                                            <outlet property="radiusTextField" destination="BVV-L4-aY5" id="rxJ-5N-Fac"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="TGW-Ll-Xrf" id="Xly-ZH-kFz"/>
-                                    <outlet property="delegate" destination="TGW-Ll-Xrf" id="b6Z-Yn-9TD"/>
-                                </connections>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Pin" translatesAutoresizingMaskIntoConstraints="NO" id="MiD-OD-Ruv">
                                 <rect key="frame" x="160" y="186" width="54" height="59"/>
@@ -916,25 +912,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems>
-                        <barButtonItem systemItem="add" id="Ysd-IN-lDo">
-                            <connections>
-                                <action selector="onAddWithSender:" destination="TGW-Ll-Xrf" id="ypQ-hV-1TE"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem image="GPS" id="2pa-c4-Q6l">
-                            <connections>
-                                <action selector="onZoomToCurrentLocationWithSender:" destination="TGW-Ll-Xrf" id="fUh-qV-Ei0"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem systemItem="add" id="Ysd-IN-lDo"/>
+                        <barButtonItem image="GPS" id="2pa-c4-Q6l"/>
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="addButton" destination="Ysd-IN-lDo" id="Lea-KM-8M3"/>
-                        <outlet property="eventTypeSegmentedControl" destination="48W-mv-iSi" id="4Xo-pk-ZfT"/>
-                        <outlet property="mapView" destination="ZG1-EY-BX0" id="Kau-U7-Oq6"/>
-                        <outlet property="navigationBar" destination="s3v-3j-IUh" id="k4k-Yh-DgX"/>
-                        <outlet property="tableView" destination="Xzm-OD-j4W" id="IyJ-Qc-9Xh"/>
-                        <outlet property="zoomButton" destination="2pa-c4-Q6l" id="7Vq-VY-W8w"/>
+                        <outlet property="addButton" destination="Ysd-IN-lDo" id="RB0-gN-L17"/>
+                        <outlet property="eventTypeSegmentedControl" destination="48W-mv-iSi" id="sci-iE-PQ8"/>
+                        <outlet property="mapView" destination="ZG1-EY-BX0" id="3YU-PL-sWS"/>
+                        <outlet property="radiusTableView" destination="Xzm-OD-j4W" id="g6U-UG-4dX"/>
+                        <outlet property="zoomButton" destination="2pa-c4-Q6l" id="Zy8-hL-8JL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Udk-6w-TOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
