@@ -17,6 +17,7 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var homeTableView: UITableView!
     
     var presaClass = [DB_Presa]()
+    var timerClass = [DB_Timer]()
     
     var idCellaSelezionata = 0
     
@@ -29,6 +30,7 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
         tabBarController?.tabBar.unselectedItemTintColor = UIColor(colorLiteralRed: 53/255, green: 134/255, blue: 140/255, alpha: 1)
         self.view.backgroundColor = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
         self.tableViewHome.backgroundColor? = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
+        
         self.getPresa()
     }
     
@@ -69,7 +71,6 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
                 for i in 0 ..< prese.count{
                     
                     // Getting the data at each index
-                    
                     let powerStrip = DB_Presa()
                     powerStrip.setID(prese[i]["id"] as! Int!)
                     powerStrip.setNome(prese[i]["nome"] as! String!)
@@ -77,6 +78,7 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
                     self.presaClass.append(powerStrip)
                     
                     // Funzione timer
+                    self.getTimer(i)
                     
                 }
                 self.homeTableView.reloadData()
@@ -87,6 +89,62 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
         }
         //executing the task
         task.resume()
+    }
+    
+    func getTimer (_ i: Int) {
+        
+        // DA CAMBIARE UN ID QUI DENTRO
+        let id_timer = presaClass[i].getId // == idCharlie
+        var URL_GET_Timer = "http://10.20.40.24/monithor/api/GetTimer.php"
+        URL_GET_Timer += "?id=\(id_timer)"
+        
+        //created NSURL
+        let requestURL = NSURL(string: URL_GET_Timer)
+        
+        //creating NSMutableURLRequest
+        let request = NSMutableURLRequest(url: requestURL! as URL)
+        
+        //setting the method to post
+        request.httpMethod = "GET"
+        
+        //creating a task to send the post request
+        let task = URLSession.shared.dataTask(with: request as URLRequest){
+            data, response, error in
+            
+            //exiting if there is some error
+            if error != nil{
+                print("Error is \(String(describing: error))")
+                return;
+            }
+            
+            // Parsing the response
+            do {
+                //converting resonse to NSDictionary
+                var timerJSON: NSDictionary!
+                timerJSON =  try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                
+                let timers = timerJSON["timer"] as! [NSDictionary]
+                dump(timers)
+                
+                for i in 0 ..< timers.count{
+                    
+                    // Getting the data at each index
+                    let timer = DB_Timer()
+                    timer.setStatoTimer(timers[i]["stato_timer"] as! Int!)
+                    timer.setTimerOn(timers[i]["timer_on"] as! String!)
+                    timer.setTimerOff(timers[i]["timer_off"] as! String!)
+                    self.timerClass.append(timer)
+                    
+                }
+                self.homeTableView.reloadData()
+                self.view.setNeedsDisplay()
+            } catch {
+                print(error)
+            }
+        }
+        //executing the task
+        task.resume()
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -104,7 +162,11 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
         else {
             aCell.statusButton.imageView?.image = #imageLiteral(resourceName: "Power Button ON")
         }
+        aCell.timerBegin.text = timerClass[indexPath.row].getTimer_on
+        aCell.timerEnd.text = timerClass[indexPath.row].getTimer_off
+        
         aCell.idCharlie = indexPath.row
+        
         return aCell
     }
     

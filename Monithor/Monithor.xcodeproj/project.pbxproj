@@ -21,7 +21,6 @@
 		72B38E271ED5B9A8003FED6D /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B38E261ED5B9A8003FED6D /* Details.swift */; };
 		72FBD0FA1ED5BFD800E64878 /* DB_Presa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FBD0F91ED5BFD800E64878 /* DB_Presa.swift */; };
 		72FBD0FC1ED5C04900E64878 /* DB_Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FBD0FB1ED5C04900E64878 /* DB_Timer.swift */; };
-		72FBD0FE1ED5C07E00E64878 /* HomeClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FBD0FD1ED5C07E00E64878 /* HomeClass.swift */; };
 		DF097B6C1ECC75AE005CF694 /* TableViewCellPowerStrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF097B6B1ECC75AE005CF694 /* TableViewCellPowerStrip.swift */; };
 		DF097B6E1ECC79CB005CF694 /* TableViewCellPowerStripDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF097B6D1ECC79CB005CF694 /* TableViewCellPowerStripDetails.swift */; };
 		DF097B701ECC827C005CF694 /* CollectionViewCellCathegories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF097B6F1ECC827C005CF694 /* CollectionViewCellCathegories.swift */; };
@@ -55,7 +54,6 @@
 		72B38E261ED5B9A8003FED6D /* Details.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
 		72FBD0F91ED5BFD800E64878 /* DB_Presa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB_Presa.swift; sourceTree = "<group>"; };
 		72FBD0FB1ED5C04900E64878 /* DB_Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB_Timer.swift; sourceTree = "<group>"; };
-		72FBD0FD1ED5C07E00E64878 /* HomeClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeClass.swift; sourceTree = "<group>"; };
 		DF097B6B1ECC75AE005CF694 /* TableViewCellPowerStrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellPowerStrip.swift; sourceTree = "<group>"; };
 		DF097B6D1ECC79CB005CF694 /* TableViewCellPowerStripDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellPowerStripDetails.swift; sourceTree = "<group>"; };
 		DF097B6F1ECC827C005CF694 /* CollectionViewCellCathegories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCellCathegories.swift; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 				72B38E261ED5B9A8003FED6D /* Details.swift */,
 				72FBD0F91ED5BFD800E64878 /* DB_Presa.swift */,
 				72FBD0FB1ED5C04900E64878 /* DB_Timer.swift */,
-				72FBD0FD1ED5C07E00E64878 /* HomeClass.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -250,7 +247,6 @@
 				7225900A1ED4453A00FB1D25 /* AddGeotificationViewController.swift in Sources */,
 				DF86EF0A1ECB476400520766 /* ViewControllerPowerStrip.swift in Sources */,
 				72B38E271ED5B9A8003FED6D /* Details.swift in Sources */,
-				72FBD0FE1ED5C07E00E64878 /* HomeClass.swift in Sources */,
 				DF097B7D1ECF1990005CF694 /* ViewControllerSettingsDetails.swift in Sources */,
 				727EB7A21EC9E02E004ECC4F /* ViewControllerHome.swift in Sources */,
 				72FBD0FA1ED5BFD800E64878 /* DB_Presa.swift in Sources */,
