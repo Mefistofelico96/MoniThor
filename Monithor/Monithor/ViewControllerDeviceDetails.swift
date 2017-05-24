@@ -12,11 +12,12 @@ class ViewControllerDeviceDetails: UIViewController, UITableViewDelegate, UITabl
 
     @IBOutlet weak var deviceDetails: DeviceDetailsTableView!
     
-    let details = [Details("Name", "asdf"), Details("Room", "qwerty")]
+    let details = [Details("Name:", "label"), Details("Room:", "label"), Details("Cathegory:", "label"), Details("Priority:", "label"), Details("Switch on:", "label"), Details("Connected at:", "label"), Details("KW/h used:", "label"), Details("Actually using:", "label")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
+        self.deviceDetails.backgroundColor? = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
     }
 
     override func didReceiveMemoryWarning() {
