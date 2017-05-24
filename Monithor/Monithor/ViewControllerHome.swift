@@ -35,6 +35,7 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func getPresa () {
+        
         //Our web service url
         let URL_GET_SCARPETTE:String = "http://10.20.40.24/monithor/api/GetPresa.php"
         
@@ -68,7 +69,7 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
                 var prese = presaJSON["presa"] as! [NSDictionary]
                 dump(prese)
                 
-                for i in 0 ..< prese.count{
+                for i in 0 ..< prese.count {
                     
                     // Getting the data at each index
                     let powerStrip = DB_Presa()
@@ -78,7 +79,7 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
                     self.presaClass.append(powerStrip)
                     
                     // Funzione timer
-                    self.getTimer(i)
+                    // self.getTimer(i)
                     
                 }
                 self.homeTableView.reloadData()
@@ -126,13 +127,15 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
                 let timers = timerJSON["timer"] as! [NSDictionary]
                 dump(timers)
                 
-                for i in 0 ..< timers.count{
+                
+                for j in 0 ..< timers.count {
                     
                     // Getting the data at each index
+                    
                     let timer = DB_Timer()
-                    timer.setStatoTimer(timers[i]["stato_timer"] as! Int!)
-                    timer.setTimerOn(timers[i]["timer_on"] as! String!)
-                    timer.setTimerOff(timers[i]["timer_off"] as! String!)
+                    timer.setStatoTimer(timers[j]["stato_timer"] as! Int!)
+                    timer.setTimerOn(timers[j]["timer_on"] as! String!)
+                    timer.setTimerOff(timers[j]["timer_off"] as! String!)
                     self.timerClass.append(timer)
                     
                 }
