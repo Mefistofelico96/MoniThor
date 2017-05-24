@@ -9,6 +9,15 @@
 import UIKit
 
 class TableViewCellPresa: UITableViewCell {
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
