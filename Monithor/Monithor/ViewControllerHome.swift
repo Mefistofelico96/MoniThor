@@ -96,10 +96,8 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
     
     func getTimer (_ i: Int) {
         
-        // DA CAMBIARE UN ID QUI DENTRO
-        let id_timer = presaClass[i].getId
         var URL_GET_Timer = "http://10.20.40.24/monithor/api/GetTimer.php"
-        URL_GET_Timer += "?id=\(id_timer)"
+        URL_GET_Timer += "?id=\(presaClass[i].getId)"
         
         // Created NSURL
         let requestURL = NSURL(string: URL_GET_Timer)
@@ -132,12 +130,13 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
                 for j in 0 ..< timers.count {
                     
                     // Getting the data at each index
-                    let timer = DB_Timer()                    
+                    let timer = DB_Timer()
                     timer.setStatoTimer(timers[j]["stato_timer"] as! Int!)
                     timer.setTimerOn(timers[j]["timer_on"] as! String!)
                     timer.setTimerOff(timers[j]["timer_off"] as! String!)
-                    self.timerClass.append(timer)
-                
+                    self.presaClass[i].db_timer = timer
+                    //self.timerClass.append(timer)
+                    
                 }
                 self.homeTableView.reloadData()
                 self.view.setNeedsDisplay()
@@ -148,6 +147,7 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
         // Executing the task
         task.resume()
         
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -157,32 +157,32 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let aCell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath) as! TableViewCellHome
-        aCell.deviceName.text = presaClass[indexPath.row].getNome
-        if presaClass[indexPath.row].getStato == 0 {
-            aCell.statusButton.imageView?.image = #imageLiteral(resourceName: "Power Button OFF")
-        }
-        else {
-            aCell.statusButton.imageView?.image = #imageLiteral(resourceName: "Power Button ON")
-        }
-        aCell.timerBegin.text = timerClass[indexPath.row].getTimer_on
-        aCell.timerEnd.text = timerClass[indexPath.row].getTimer_off
         
-        aCell.idCharlie = indexPath.row
-        
+        // DispatchQueue.main.async() {
+            aCell.deviceName.text = self.presaClass[indexPath.row].getNome
+            if self.presaClass[indexPath.row].getStato == 0 {
+                aCell.statusButton.imageView?.image = #imageLiteral(resourceName: "Power Button OFF")
+            }
+            else {
+                aCell.statusButton.imageView?.image = #imageLiteral(resourceName: "Power Button ON")
+            }
+            aCell.timerBegin.text = self.presaClass[indexPath.row].db_timer.getTimer_on
+            aCell.timerEnd.text = self.presaClass[indexPath.row].db_timer.getTimer_off
+            aCell.idCharlie = indexPath.row
+        // }
         return aCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showDeviceDetails", sender: nil)
         idCellaSelezionata = indexPath.row
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let dest = segue.destination as? TableViewCellHome {
             dest.statoFromHome = presaClass[idCellaSelezionata].getStato
-            dest.idFromHome = presaClass[idCellaSelezionata].getId
             dest.statoTimer = timerClass[idCellaSelezionata].getStatoTimer
-            
             
         }
         

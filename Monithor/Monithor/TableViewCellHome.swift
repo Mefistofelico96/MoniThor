@@ -21,7 +21,6 @@ class TableViewCellHome: UITableViewCell {
     public var idCharlie = -1
     public var statoFromHome = 0
     public var statoTimer = 0
-    public var idFromHome = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -49,8 +48,6 @@ class TableViewCellHome: UITableViewCell {
         //creating the post parameter by concatenating the keys and values from text field
         let postParameters = "stato=\(statoFromHome)&id=\(idCharlie + 1)"
         
-        
-        
         //created NSURL
         let requestURL = NSURL(string: URL_Update_stato)
         
@@ -62,7 +59,6 @@ class TableViewCellHome: UITableViewCell {
         
         //adding the parameters to request body
         request.httpBody = postParameters.data(using: String.Encoding.utf8)
-        
         
         //creating a task to send the post request
         let task = URLSession.shared.dataTask(with: request as URLRequest){
@@ -112,12 +108,10 @@ class TableViewCellHome: UITableViewCell {
 //            statoTimer = 0
 //        }
 //        
-//        let stato_timer = statoTimer
-//        let id_presa = idFromHome
 //        let URL_Update_StatoTimer = "http://10.20.40.24/monithor/api/Update_StatoTimer.php"
 //        
 //        //creating the post parameter by concatenating the keys and values from text field
-//        let postParameters = "stato_timer=\(stato_timer)&id_presa=\(id_presa)"
+//        let postParameters = "stato_timer=\(statoTimer)&id_presa=\(idCharlie + 1)"
 //        
 //        //created NSURL
 //        let requestURL = NSURL(string: URL_Update_StatoTimer)
@@ -128,12 +122,8 @@ class TableViewCellHome: UITableViewCell {
 //        //setting the method to post
 //        request.httpMethod = "POST"
 //        
-//        
-//        
-//        
 //        //adding the parameters to request body
 //        request.httpBody = postParameters.data(using: String.Encoding.utf8)
-//        
 //        
 //        //creating a task to send the post request
 //        let task = URLSession.shared.dataTask(with: request as URLRequest){
@@ -153,7 +143,7 @@ class TableViewCellHome: UITableViewCell {
 //                if let parseJSON = myJSON {
 //                    
 //                    //creating a string
-//                    var msg : String!
+//                    var msg: String!
 //                    
 //                    //getting the json response
 //                    msg = parseJSON["message"] as! String?

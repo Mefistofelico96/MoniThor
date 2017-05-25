@@ -13,6 +13,8 @@ public class DB_Presa {
     private var  nome: String = ""
     private var  stato: Int = 0
     
+    public var  db_timer: DB_Timer = DB_Timer()
+    
     init() {
         
     }
