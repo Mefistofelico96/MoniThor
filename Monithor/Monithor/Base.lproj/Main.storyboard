@@ -663,7 +663,7 @@
                         <outlet property="labelMoneyWeek" destination="VEz-NM-i7R" id="Y5j-Rb-797"/>
                         <outlet property="tableViewSettings" destination="yoq-2Q-UlM" id="ntj-qU-KMr"/>
                         <segue destination="Yed-20-oxW" kind="show" identifier="showSettingsDetails" id="Hh9-ak-Uro"/>
-                        <segue destination="Huu-8h-dXk" kind="show" identifier="showGeotify" id="9pR-L9-fF1"/>
+                        <segue destination="FIt-IU-BeD" kind="show" identifier="showGeotify" id="lhN-pw-5ow"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IxR-FK-bNe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -887,23 +887,6 @@
             </objects>
             <point key="canvasLocation" x="289" y="-179"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="T26-UX-Y45">
-            <objects>
-                <navigationController id="Huu-8h-dXk" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="8FX-0S-Ndc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="FIt-IU-BeD" kind="relationship" relationship="rootViewController" id="cBg-T9-VYQ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xvV-tt-1C5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3556" y="651"/>
-        </scene>
         <!--Geotifications (0)-->
         <scene sceneID="cKa-Pw-Y3d">
             <objects>
@@ -917,7 +900,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gN-Pd-arF">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <connections>
                                     <outlet property="delegate" destination="FIt-IU-BeD" id="mw0-W9-rk1"/>
                                 </connections>
@@ -932,16 +915,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Geotifications (0)" id="YGT-bx-oqu">
-                        <barButtonItem key="leftBarButtonItem" image="CurrentLocation" id="hoO-v1-fWD">
-                            <connections>
-                                <action selector="zoomToCurrentLocationWithSender:" destination="FIt-IU-BeD" id="eKB-gT-Lj8"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="DuQ-ut-YyZ">
-                            <connections>
-                                <segue destination="eZ8-F1-xnP" kind="presentation" identifier="addGeotification" id="koI-pv-Axc"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="DuQ-ut-YyZ">
+                                <color key="tintColor" red="0.039215686270000001" green="0.25490196079999999" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="kcY-kB-xZu" kind="presentation" identifier="addGeotification" id="bSO-HI-lCl"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="CurrentLocation" id="hoO-v1-fWD">
+                                <color key="tintColor" red="0.039215686270000001" green="0.25490196079999999" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="zoomToCurrentLocationWithSender:" destination="FIt-IU-BeD" id="eKB-gT-Lj8"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="0gN-Pd-arF" id="o6g-JO-BPs"/>
@@ -949,24 +936,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywW-jz-vv5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4175" y="651"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="rw1-oK-8JC">
-            <objects>
-                <navigationController id="eZ8-F1-xnP" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="scT-rK-Bhz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="TgY-s9-QLA" kind="relationship" relationship="rootViewController" id="Yck-Er-Vgo"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="l2k-ik-DWi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4786" y="651"/>
+            <point key="canvasLocation" x="3292" y="651"/>
         </scene>
         <!--Add Geotification-->
         <scene sceneID="LDG-pv-pTP">
@@ -1113,17 +1083,20 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Geotification" id="GzY-p3-fpD">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="sAO-yC-2zN">
+                            <color key="tintColor" red="0.039215686270000001" green="0.25490196079999999" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="onCancelWithSender:" destination="TgY-s9-QLA" id="rxs-E3-hSJ"/>
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem title="Add" id="dy0-Ce-nV6">
+                                <color key="tintColor" red="0.039215686270000001" green="0.25490196079999999" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="onAddWithSender:" destination="TgY-s9-QLA" id="A53-Vc-J0I"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="CurrentLocation" id="5ZL-tF-U4r" userLabel="CurrentLocation">
+                                <color key="tintColor" red="0.039215686270000001" green="0.25490196079999999" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="onZoomToCurrentLocationWithSender:" destination="TgY-s9-QLA" id="Tem-aw-164"/>
                                 </connections>
@@ -1141,7 +1114,24 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Prd-Q5-sbv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5410" y="651"/>
+            <point key="canvasLocation" x="4190" y="1406"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Usv-Zg-H2C">
+            <objects>
+                <navigationController id="kcY-kB-xZu" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="sxP-JR-L87">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="TgY-s9-QLA" kind="relationship" relationship="rootViewController" id="9S4-45-a1k"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="he5-lI-bgK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4190" y="651"/>
         </scene>
     </scenes>
     <resources>
