@@ -22,7 +22,9 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
     var idCellaSelezionata = 0
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
         navigationController?.navigationBar.tintColor = UIColor(red: 10/255, green: 65/255, blue: 84/255, alpha: 1)
         navigationController?.navigationBar.barTintColor = UIColor(colorLiteralRed: 174/255, green: 227/255, blue: 208/255, alpha: 1)
         tabBarController?.tabBar.barTintColor = UIColor(colorLiteralRed: 174/255, green: 227/255, blue: 208/255, alpha: 1)
@@ -32,37 +34,37 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
         self.tableViewHome.backgroundColor? = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
         
         self.getPresa()
+        
     }
     
     func getPresa () {
         
-        //Our web service url
+        // Our web service url
         let URL_GET_SCARPETTE:String = "http://10.20.40.24/monithor/api/GetPresa.php"
         
-        //created NSURL
+        // Created NSURL
         let requestURL = NSURL(string: URL_GET_SCARPETTE)
         
-        //creating NSMutableURLRequest
+        // Creating NSMutableURLRequest
         let request = NSMutableURLRequest(url: requestURL! as URL)
         
-        //setting the method to post
+        // Setting the method to post
         request.httpMethod = "GET"
         
-        //creating a task to send the post request
+        // Creating a task to send the post request
         let task = URLSession.shared.dataTask(with: request as URLRequest){
             data, response, error in
             
-            //exiting if there is some error
+            // Exiting if there is some error
             if error != nil{
                 print("error is \(String(describing: error))")
                 return;
             }
             
-            //parsing the response
-            
+            // Parsing the response
             do {
                 
-                //converting resonse to NSDictionary
+                // Converting resonse to NSDictionary
                 var presaJSON: NSDictionary!
                 presaJSON =  try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
                 
@@ -79,7 +81,7 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
                     self.presaClass.append(powerStrip)
                     
                     // Funzione timer
-                    // self.getTimer(i)
+                    self.getTimer(i)
                     
                 }
                 self.homeTableView.reloadData()
@@ -88,31 +90,31 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
                 print(error)
             }
         }
-        //executing the task
+        // Executing the task
         task.resume()
     }
     
     func getTimer (_ i: Int) {
         
         // DA CAMBIARE UN ID QUI DENTRO
-        let id_timer = presaClass[i].getId // == idCharlie
+        let id_timer = presaClass[i].getId
         var URL_GET_Timer = "http://10.20.40.24/monithor/api/GetTimer.php"
         URL_GET_Timer += "?id=\(id_timer)"
         
-        //created NSURL
+        // Created NSURL
         let requestURL = NSURL(string: URL_GET_Timer)
         
-        //creating NSMutableURLRequest
+        // Creating NSMutableURLRequest
         let request = NSMutableURLRequest(url: requestURL! as URL)
         
-        //setting the method to post
+        // Setting the method to post
         request.httpMethod = "GET"
         
-        //creating a task to send the post request
-        let task = URLSession.shared.dataTask(with: request as URLRequest){
+        // Creating a task to send the post request
+        let task = URLSession.shared.dataTask(with: request as URLRequest) {
             data, response, error in
             
-            //exiting if there is some error
+            // Exiting if there is some error
             if error != nil{
                 print("Error is \(String(describing: error))")
                 return;
@@ -120,24 +122,22 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
             
             // Parsing the response
             do {
-                //converting resonse to NSDictionary
+                // Converting resonse to NSDictionary
                 var timerJSON: NSDictionary!
                 timerJSON =  try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
                 
                 let timers = timerJSON["timer"] as! [NSDictionary]
                 dump(timers)
                 
-                
                 for j in 0 ..< timers.count {
                     
                     // Getting the data at each index
-                    
-                    let timer = DB_Timer()
+                    let timer = DB_Timer()                    
                     timer.setStatoTimer(timers[j]["stato_timer"] as! Int!)
                     timer.setTimerOn(timers[j]["timer_on"] as! String!)
                     timer.setTimerOff(timers[j]["timer_off"] as! String!)
                     self.timerClass.append(timer)
-                    
+                
                 }
                 self.homeTableView.reloadData()
                 self.view.setNeedsDisplay()
@@ -145,14 +145,13 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
                 print(error)
             }
         }
-        //executing the task
+        // Executing the task
         task.resume()
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presaClass.count
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -182,7 +181,11 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
         if let dest = segue.destination as? TableViewCellHome {
             dest.statoFromHome = presaClass[idCellaSelezionata].getStato
             dest.idFromHome = presaClass[idCellaSelezionata].getId
+            dest.statoTimer = timerClass[idCellaSelezionata].getStatoTimer
+            
+            
         }
+        
 //        if let dest = segue.destination as? CollectionViewController {
 //            dest.people = persone
 //        }

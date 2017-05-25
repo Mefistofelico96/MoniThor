@@ -40,12 +40,12 @@ public class DB_Timer {
     }
     
     // Set id_presa
-    func setID (_ id_presa: Int) {
+    func setIDPresa (_ id_presa: Int) {
         self.id_presa = id_presa
     }
     
     //get Stato_timer
-    var getStato_timer: Int {
+    var getStatoTimer: Int {
         get {
             return self.stato_timer
         }

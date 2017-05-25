@@ -117,6 +117,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OaL-tS-JmH">
                                                     <rect key="frame" x="246" y="36" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="switchState:" destination="i5f-hY-Ckd" eventType="valueChanged" id="i2X-bK-NdL"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNb-MP-8R1">
                                                     <rect key="frame" x="190" y="54" width="51" height="16"/>
@@ -132,6 +135,7 @@
                                             <outlet property="deviceImage" destination="afy-tA-bow" id="CDl-HG-zBu"/>
                                             <outlet property="deviceName" destination="TPC-Fe-E5E" id="5Cg-2A-ftD"/>
                                             <outlet property="statusButton" destination="cp5-We-G1H" id="DCS-H0-HC9"/>
+                                            <outlet property="switchStateTimer" destination="OaL-tS-JmH" id="lUU-HP-Mff"/>
                                             <outlet property="timerBegin" destination="DV1-O7-fq8" id="C3L-h6-spz"/>
                                             <outlet property="timerEnd" destination="kNb-MP-8R1" id="x6S-3R-ehc"/>
                                         </connections>
