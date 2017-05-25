@@ -25,6 +25,7 @@ class ViewControllerSettings: UIViewController, UITableViewDataSource, UITableVi
         settingsType.append(Cathegory(name: "Geofence", image: #imageLiteral(resourceName: "Geofence")))
         settingsType.append(Cathegory(name: "Change E-Mail", image: #imageLiteral(resourceName: "ChangeMail")))
         settingsType.append(Cathegory(name: "Change Pin", image: #imageLiteral(resourceName: "ChangePin")))
+        settingsType.append(Cathegory(name: "Reset Stats", image: #imageLiteral(resourceName: "Reset")))
     }
 
     override func viewDidLoad() {
