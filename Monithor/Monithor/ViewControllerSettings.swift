@@ -53,6 +53,7 @@ class ViewControllerSettings: UIViewController, UITableViewDataSource, UITableVi
         if indexPath.row == 0 {
             self.performSegue(withIdentifier: "geofenceSegue", sender: indexPath.row)
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
