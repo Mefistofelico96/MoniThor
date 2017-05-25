@@ -51,7 +51,7 @@ class ViewControllerSettings: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            self.performSegue(withIdentifier: "geofenceSegue", sender: indexPath.row)
+            self.performSegue(withIdentifier: "showGeotify", sender: indexPath.row)
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
