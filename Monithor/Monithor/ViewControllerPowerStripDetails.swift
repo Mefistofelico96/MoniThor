@@ -19,6 +19,7 @@ class ViewControllerPowerStripDetails: UIViewController, UITableViewDataSource, 
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
         self.tableViewPowerStripDetails.backgroundColor = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
+        title = "\(labelPowerStripName.text!) Power Strip"
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

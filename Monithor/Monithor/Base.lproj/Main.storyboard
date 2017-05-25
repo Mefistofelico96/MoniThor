@@ -148,15 +148,45 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="0PH-ao-0Pr"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Axt-LK-qo2">
+                                <rect key="frame" x="329" y="89" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Edit">
+                                    <color key="titleColor" red="0.20784313730000001" green="0.52549019610000003" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="editButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s6o-ta-K7u"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nlW-bb-dAI">
+                                <rect key="frame" x="171" y="77" width="147" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKl-ZY-7CR">
+                                <rect key="frame" x="326" y="89" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.20784313730000001" green="0.52549019610000003" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pL3-d0-w4n"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="cUF-bT-bEb"/>
                     <connections>
+                        <outlet property="doneButtonOutlet" destination="QKl-ZY-7CR" id="YfF-p3-fhY"/>
+                        <outlet property="editButtonOutlet" destination="Axt-LK-qo2" id="CjG-Jl-WEr"/>
                         <outlet property="homeTableView" destination="w6X-sg-7Zz" id="JcX-Gw-mga"/>
                         <outlet property="imageUser" destination="94B-x8-bB9" id="ScM-y7-c0q"/>
                         <outlet property="labelNumberPowerStrip" destination="eBX-VA-YMF" id="nbI-T2-F0a"/>
                         <outlet property="labelUserName" destination="AqA-pd-OTj" id="3Kv-2n-V4h"/>
+                        <outlet property="newNameTextfield" destination="nlW-bb-dAI" id="uoT-ZY-fND"/>
                         <outlet property="tableViewHome" destination="w6X-sg-7Zz" id="c5M-Lg-eUV"/>
                         <segue destination="PtE-yX-8Ds" kind="show" identifier="showDeviceDetails" id="RJJ-of-0Fp"/>
                     </connections>
@@ -919,7 +949,7 @@
                             <barButtonItem systemItem="add" id="DuQ-ut-YyZ">
                                 <color key="tintColor" red="0.039215686270000001" green="0.25490196079999999" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <segue destination="kcY-kB-xZu" kind="presentation" identifier="addGeotification" id="bSO-HI-lCl"/>
+                                    <segue destination="kcY-kB-xZu" kind="show" identifier="addGeotification" id="bSO-HI-lCl"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="CurrentLocation" id="hoO-v1-fWD">
@@ -1120,7 +1150,7 @@
         <scene sceneID="Usv-Zg-H2C">
             <objects>
                 <navigationController id="kcY-kB-xZu" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="sxP-JR-L87">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sxP-JR-L87">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -10,12 +10,30 @@ import UIKit
 
 class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    let defaults = UserDefaults.standard
     @IBOutlet weak var labelUserName: UILabel!
     @IBOutlet weak var labelNumberPowerStrip: UILabel!
     @IBOutlet weak var imageUser: UIImageView!
     @IBOutlet weak var tableViewHome: UITableView!
     @IBOutlet weak var homeTableView: UITableView!
+    @IBOutlet weak var newNameTextfield: UITextField!
+    @IBOutlet weak var editButtonOutlet: UIButton!
+    @IBOutlet weak var doneButtonOutlet: UIButton!
+    @IBAction func editButton(_ sender: Any) {
+        labelUserName.text = "New name:"
+        newNameTextfield.isHidden = false
+        doneButtonOutlet.isHidden = false
+        editButtonOutlet.isHidden = true
+    }
     
+    @IBAction func doneButton(_ sender: Any) {
+        defaults.set("\(newNameTextfield.text!)", forKey: "username")
+        labelUserName.text = newNameTextfield.text!
+        newNameTextfield.isHidden = true
+        doneButtonOutlet.isHidden = true
+        editButtonOutlet.isHidden = false
+        self.view.endEditing(true)
+    }
     var presaClass = [DB_Presa]()
     var timerClass = [DB_Timer]()
     
@@ -24,15 +42,19 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
         navigationController?.navigationBar.tintColor = UIColor(red: 10/255, green: 65/255, blue: 84/255, alpha: 1)
         navigationController?.navigationBar.barTintColor = UIColor(colorLiteralRed: 174/255, green: 227/255, blue: 208/255, alpha: 1)
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor(red: 10/255, green: 65/255, blue: 84/255, alpha: 1)]
         tabBarController?.tabBar.barTintColor = UIColor(colorLiteralRed: 174/255, green: 227/255, blue: 208/255, alpha: 1)
         tabBarController?.tabBar.tintColor = UIColor(colorLiteralRed: 10/255, green: 65/255, blue: 84/255, alpha: 1)
         tabBarController?.tabBar.unselectedItemTintColor = UIColor(colorLiteralRed: 53/255, green: 134/255, blue: 140/255, alpha: 1)
         self.view.backgroundColor = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
         self.tableViewHome.backgroundColor? = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
-        
+        labelUserName.text = "User"
+        labelUserName.text = defaults.object(forKey: "username") as? String
+        labelNumberPowerStrip.text = "0 Power Strips connected"
+        newNameTextfield.isHidden = true
+        doneButtonOutlet.isHidden = true
         self.getPresa()
         
     }
