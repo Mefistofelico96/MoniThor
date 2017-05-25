@@ -158,18 +158,24 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
         
         let aCell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath) as! TableViewCellHome
         
-        // DispatchQueue.main.async() {
-            aCell.deviceName.text = self.presaClass[indexPath.row].getNome
-            if self.presaClass[indexPath.row].getStato == 0 {
-                aCell.statusButton.imageView?.image = #imageLiteral(resourceName: "Power Button OFF")
-            }
-            else {
-                aCell.statusButton.imageView?.image = #imageLiteral(resourceName: "Power Button ON")
-            }
-            aCell.timerBegin.text = self.presaClass[indexPath.row].db_timer.getTimer_on
-            aCell.timerEnd.text = self.presaClass[indexPath.row].db_timer.getTimer_off
-            aCell.idCharlie = indexPath.row
-        // }
+        aCell.deviceName.text = presaClass[indexPath.row].getNome
+        // Bottone presa
+        if self.presaClass[indexPath.row].getStato == 0 {
+            aCell.statusButton.imageView?.image = #imageLiteral(resourceName: "Power Button OFF")
+        }
+        else {
+            aCell.statusButton.imageView?.image = #imageLiteral(resourceName: "Power Button ON")
+        }
+        // Switch timer
+        if self.presaClass[indexPath.row].getStato == 1 {
+            aCell.switchStateTimer.isOn = true
+        }
+        else {
+            aCell.switchStateTimer.isOn = false
+        }
+        
+        aCell.idCharlie = indexPath.row
+        
         return aCell
     }
     

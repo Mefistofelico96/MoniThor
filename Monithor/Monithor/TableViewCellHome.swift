@@ -100,11 +100,11 @@ class TableViewCellHome: UITableViewCell {
     @IBAction func switchState(_ sender: Any) {
         
         if statoTimer == 0 {
-            self.switchStateTimer.isEnabled = true
+            self.switchStateTimer.isOn = true
             statoTimer = 1
         }
         else {
-            self.switchStateTimer.isEnabled = false
+            self.switchStateTimer.isOn = false
             statoTimer = 0
         }
         
