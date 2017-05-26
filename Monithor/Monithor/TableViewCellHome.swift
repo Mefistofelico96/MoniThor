@@ -159,6 +159,7 @@ class TableViewCellHome: UITableViewCell {
         }
         //executing the task
         task.resume()
+        
     }
     
     

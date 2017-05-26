@@ -19,6 +19,12 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var newNameTextfield: UITextField!
     @IBOutlet weak var editButtonOutlet: UIButton!
     @IBOutlet weak var doneButtonOutlet: UIButton!
+    
+    var presaClass = [DB_Presa]()
+    var timerClass = [DB_Timer]()
+    
+    var idCellaSelezionata = 0
+    
     @IBAction func editButton(_ sender: Any) {
         labelUserName.text = "New name:"
         newNameTextfield.isHidden = false
@@ -34,10 +40,6 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
         editButtonOutlet.isHidden = false
         self.view.endEditing(true)
     }
-    var presaClass = [DB_Presa]()
-    var timerClass = [DB_Timer]()
-    
-    var idCellaSelezionata = 0
     
     override func viewDidLoad() {
         
@@ -181,6 +183,7 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
         let aCell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath) as! TableViewCellHome
         
         aCell.deviceName.text = presaClass[indexPath.row].getNome
+        
         // Bottone presa
         if self.presaClass[indexPath.row].getStato == 0 {
             aCell.statusButton.imageView?.image = #imageLiteral(resourceName: "Power Button OFF")
@@ -195,6 +198,9 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
         else {
             aCell.switchStateTimer.isOn = false
         }
+        
+        aCell.timerBegin.text = presaClass[indexPath.row].db_timer.getTimer_on
+        aCell.timerEnd.text = presaClass[indexPath.row].db_timer.getTimer_off
         
         aCell.idCharlie = indexPath.row
         

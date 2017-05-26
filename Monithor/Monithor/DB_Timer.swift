@@ -10,10 +10,10 @@ import Foundation
 
 public class DB_Timer {
     
-    private var  id_presa: Int = 0;
-    private var  stato_timer: Int = 0 ;
-    private var  timer_on: String = "";
-    private var  timer_off: String = "";
+    private var  id_presa: Int = 0
+    private var  stato_timer: Int = 0
+    private var  timer_on: String = ""
+    private var  timer_off: String = ""
     
     init () {
         
