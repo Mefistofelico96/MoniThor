@@ -18,7 +18,7 @@ class ViewControllerDeviceDetails: UIViewController, UITableViewDelegate, UITabl
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
         self.deviceDetails.backgroundColor? = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
-        title = "Device"
+        title = "\(details[0].stringa2) Device"
 
     }
 
