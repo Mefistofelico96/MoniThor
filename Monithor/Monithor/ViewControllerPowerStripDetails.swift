@@ -17,8 +17,11 @@ class ViewControllerPowerStripDetails: UIViewController, UITableViewDataSource, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
-        self.tableViewPowerStripDetails.backgroundColor = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
+        self.view.backgroundColor = UIColor(red: 245/255, green: 254/255, blue: 247/255, alpha: 1.0)
+        self.tableViewPowerStripDetails.backgroundColor = UIColor(red: 245/255, green: 254/255, blue: 247/255, alpha: 1.0)
+        self.tableViewPowerStripDetails.tableFooterView = UIView()
+        self.tableViewPowerStripDetails.tableHeaderView = UIView()
+
         title = "\(labelPowerStripName.text!) Power Strip"
     }
 

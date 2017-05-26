@@ -91,10 +91,10 @@
 			isa = PBXGroup;
 			children = (
 				7225900D1ED4455700FB1D25 /* GeotificationsViewController.swift */,
+				7217511A1ECF39B500126E41 /* RadiusCell.swift */,
 				722590091ED4453A00FB1D25 /* AddGeotificationViewController.swift */,
 				7225900B1ED4455100FB1D25 /* Geotification.swift */,
 				7225900F1ED4456100FB1D25 /* Utilities.swift */,
-				7217511A1ECF39B500126E41 /* RadiusCell.swift */,
 			);
 			name = GeoFence;
 			sourceTree = "<group>";

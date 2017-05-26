@@ -16,8 +16,10 @@ class ViewControllerDeviceDetails: UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
-        self.deviceDetails.backgroundColor? = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
+        self.view.backgroundColor = UIColor(red: 245/255, green: 254/255, blue: 247/255, alpha: 1.0)
+        self.deviceDetails.backgroundColor? = UIColor(red: 245/255, green: 254/255, blue: 247/255, alpha: 1.0)
+        self.deviceDetails.tableFooterView = UIView()
+        self.deviceDetails.tableHeaderView = UIView()
         title = "\(details[0].stringa2) Device"
 
     }

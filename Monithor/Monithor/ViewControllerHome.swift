@@ -50,8 +50,10 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
         tabBarController?.tabBar.barTintColor = UIColor(colorLiteralRed: 174/255, green: 227/255, blue: 208/255, alpha: 1)
         tabBarController?.tabBar.tintColor = UIColor(colorLiteralRed: 10/255, green: 65/255, blue: 84/255, alpha: 1)
         tabBarController?.tabBar.unselectedItemTintColor = UIColor(colorLiteralRed: 53/255, green: 134/255, blue: 140/255, alpha: 1)
-        self.view.backgroundColor = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
-        self.tableViewHome.backgroundColor? = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
+        self.view.backgroundColor = UIColor(red: 245/255, green: 254/255, blue: 247/255, alpha: 1.0)
+        self.tableViewHome.backgroundColor? = UIColor(red: 245/255, green: 254/255, blue: 247/255, alpha: 1.0)
+        self.tableViewHome.tableFooterView = UIView()
+        self.tableViewHome.tableHeaderView = UIView()
         labelUserName.text = "User"
         labelUserName.text = defaults.object(forKey: "username") as? String
         labelNumberPowerStrip.text = "0 Power Strips connected"
@@ -192,6 +194,7 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
             aCell.statusButton.imageView?.image = #imageLiteral(resourceName: "Power Button ON")
         }
         // Switch timer
+        /*
         if self.presaClass[indexPath.row].getStato == 1 {
             aCell.switchStateTimer.isOn = true
         }
@@ -201,7 +204,7 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
         
         aCell.timerBegin.text = presaClass[indexPath.row].db_timer.getTimer_on
         aCell.timerEnd.text = presaClass[indexPath.row].db_timer.getTimer_off
-        
+        */
         aCell.idCharlie = indexPath.row
         
         return aCell

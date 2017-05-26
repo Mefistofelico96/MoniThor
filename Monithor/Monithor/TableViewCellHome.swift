@@ -13,10 +13,10 @@ class TableViewCellHome: UITableViewCell {
     @IBOutlet weak var deviceImage: UIImageView!
     @IBOutlet weak var deviceName: UILabel!
     @IBOutlet weak var connectedTime: UILabel!
-    @IBOutlet weak var timerBegin: UILabel!
-    @IBOutlet weak var timerEnd: UILabel!
+    //@IBOutlet weak var timerBegin: UILabel!
+    //@IBOutlet weak var timerEnd: UILabel!
     @IBOutlet weak var statusButton: UIButton!
-    @IBOutlet weak var switchStateTimer: UISwitch!
+    //@IBOutlet weak var switchStateTimer: UISwitch!
     
     public var idCharlie = -1
     public var statoFromHome = 0
@@ -24,7 +24,7 @@ class TableViewCellHome: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = UIColor(red: 236/255, green: 254/255, blue: 240/255, alpha: 1.0)
+        self.backgroundColor = UIColor(red: 245/255, green: 254/255, blue: 247/255, alpha: 1.0)
 
     }
 
@@ -96,7 +96,7 @@ class TableViewCellHome: UITableViewCell {
         task.resume()
         
     }
-    
+    /*
     @IBAction func switchState(_ sender: Any) {
         
         if statoTimer == 0 {
@@ -162,5 +162,5 @@ class TableViewCellHome: UITableViewCell {
         
     }
     
-    
+    */
 }
