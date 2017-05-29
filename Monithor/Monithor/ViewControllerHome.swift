@@ -22,8 +22,10 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
     
     var presaClass = [DB_Presa]()
     var timerClass = [DB_Timer]()
+    
     var raspIP = "10.20.40.24"
     var idCellaSelezionata = 0
+    var counter = 0
     
     @IBAction func editButton(_ sender: Any) {
         labelUserName.text = "New name:"
@@ -56,7 +58,7 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
         self.tableViewHome.tableHeaderView = UIView()
         labelUserName.text = "User"
         labelUserName.text = defaults.object(forKey: "username") as? String
-        labelNumberPowerStrip.text = "0 Power Strips connected"
+        labelNumberPowerStrip.text = "\(counter) Power Strips connected"
         newNameTextfield.isHidden = true
         doneButtonOutlet.isHidden = true
         self.getPresa()
