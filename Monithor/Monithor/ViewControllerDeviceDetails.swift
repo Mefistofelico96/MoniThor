@@ -8,18 +8,18 @@
 
 import UIKit
 
-class ViewControllerDeviceDetails: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewControllerDeviceDetails: UITableViewController {
 
-    @IBOutlet weak var deviceDetails: DeviceDetailsTableView!
+    @IBOutlet var deviceTable: UITableView!
     
     let details = [Details("Name:", "label"), Details("Room:", "label"), Details("Cathegory:", "label"), Details("Priority:", "label"), Details("Switch on:", "label"), Details("Connected at:", "label"), Details("KW/h used:", "label"), Details("Actually using:", "label")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 245/255, green: 254/255, blue: 247/255, alpha: 1.0)
-        self.deviceDetails.backgroundColor? = UIColor(red: 245/255, green: 254/255, blue: 247/255, alpha: 1.0)
-        self.deviceDetails.tableFooterView = UIView()
-        self.deviceDetails.tableHeaderView = UIView()
+        self.deviceTable.backgroundColor? = UIColor(red: 245/255, green: 254/255, blue: 247/255, alpha: 1.0)
+        self.deviceTable.tableFooterView = UIView()
+        self.deviceTable.tableHeaderView = UIView()
         title = "\(details[0].stringa2) Device"
 
     }
@@ -28,19 +28,6 @@ class ViewControllerDeviceDetails: UIViewController, UITableViewDelegate, UITabl
         super.didReceiveMemoryWarning()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return details.count
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = deviceDetails.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as! DeviceDetailsCell
-        cell.label1.text = details[indexPath.row].stringa1
-        cell.label2.text = details[indexPath.row].stringa2
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
 
 }
