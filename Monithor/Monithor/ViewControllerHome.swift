@@ -10,7 +10,6 @@ import UIKit
 
 class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    let defaults = UserDefaults.standard
     @IBOutlet weak var labelUserName: UILabel!
     @IBOutlet weak var labelNumberPowerStrip: UILabel!
     @IBOutlet weak var imageUser: UIImageView!
@@ -19,6 +18,8 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var newNameTextfield: UITextField!
     @IBOutlet weak var editButtonOutlet: UIButton!
     @IBOutlet weak var doneButtonOutlet: UIButton!
+    
+    let defaults = UserDefaults.standard
     
     var presaClass = [DB_Presa]()
     var timerClass = [DB_Timer]()
@@ -63,6 +64,10 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
         doneButtonOutlet.isHidden = true
         self.getPresa()
         
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
     
     func getPresa () {
@@ -178,7 +183,6 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
                     
                     timer.setStatoTimer(timers[j]["stato_timer"] as! Int!)
                     self.presaClass[i].db_timer = timer
-                    //self.timerClass.append(timer)
                     
                 }
                 self.homeTableView.reloadData()
@@ -208,18 +212,17 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
         else {
             aCell.statusButton.imageView?.image = #imageLiteral(resourceName: "Power Button ON")
         }
-        // Switch timer
-        /*
-        if self.presaClass[indexPath.row].getStato == 1 {
-            aCell.switchStateTimer.isOn = true
-        }
-        else {
-            aCell.switchStateTimer.isOn = false
-        }
         
-        aCell.timerBegin.text = presaClass[indexPath.row].db_timer.getTimer_on
-        aCell.timerEnd.text = presaClass[indexPath.row].db_timer.getTimer_off
-        */
+//        Switch timer
+//        if self.presaClass[indexPath.row].getStato == 1 {
+//            aCell.switchStateTimer.isOn = true
+//        }
+//        else {
+//            aCell.switchStateTimer.isOn = false
+//        }
+//        
+//        aCell.timerBegin.text = presaClass[indexPath.row].db_timer.getTimer_on
+//        aCell.timerEnd.text = presaClass[indexPath.row].db_timer.getTimer_off
         
         aCell.idCharlie = indexPath.row
         
@@ -238,16 +241,11 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
             dest.statoTimer = timerClass[idCellaSelezionata].getStatoTimer
             
         }
-        
 //        if let dest = segue.destination as? ViewControllerDeviceDetails {
 //            dest.scarpetta = presaClass[idCellaSelezionata]
 //            dest.idScelto = idCellaSelezionata
 //        }
         
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
 }

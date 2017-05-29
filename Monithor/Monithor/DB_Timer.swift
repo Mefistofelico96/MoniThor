@@ -28,69 +28,69 @@ public class DB_Timer {
         
     }
     
-    //get Id_presa
-    var getId_presa: Int {
+    // Get IdPresa
+    var getIdPresa: Int {
         get {
             return self.id_presa
         }
+    }
+    
+    // Set idPresa
+    func setIDPresa (_ id_presa: Int) {
+        self.id_presa = id_presa
     }
     
     init (id_presa: Int) {
         self.id_presa = id_presa
     }
     
-    // Set id_presa
-    func setIDPresa (_ id_presa: Int) {
-        self.id_presa = id_presa
-    }
-    
-    //get Stato_timer
+    // Get StatoTimer
     var getStatoTimer: Int {
         get {
             return self.stato_timer
         }
     }
     
-    init(stato_timer: Int) {
-        self.stato_timer = stato_timer
-    }
-    
-    // Set stato_timer
+    // Set statoTimer
     func setStatoTimer (_ stato_timer: Int) {
         self.stato_timer = stato_timer
     }
     
+    init (stato_timer: Int) {
+        self.stato_timer = stato_timer
+    }
     
-    // Get timer_on
+    
+    // Get timerOn
     var getTimer_on: String {
         get {
             return self.timer_on
         }
     }
     
-    // Set timer_on
+    // Set timerOn
     func setTimerOn (_ timer_on: String) {
         self.timer_on = timer_on
     }
     
-    init(timer_on: String) {
+    init (timer_on: String) {
         self.timer_on = timer_on
     }
     
     
-    // Get timer_off
+    // Get timerOff
     var getTimer_off: String {
         get {
             return self.timer_off
         }
     }
     
-    // Set timer_off
+    // Set timerOff
     func setTimerOff (_ timer_off: String) {
         self.timer_off = timer_off
     }
     
-    init(timer_off: String) {
+    init (timer_off: String) {
         self.timer_off = timer_off
     }
     

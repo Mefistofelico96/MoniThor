@@ -9,13 +9,14 @@
 import Foundation
 
 public class DB_Presa {
+    
     private var  id: Int = 0
     private var  nome: String = ""
     private var  stato: Int = 0
     
     public var  db_timer: DB_Timer = DB_Timer()
     
-    init() {
+    init () {
         
     }
     
@@ -25,49 +26,52 @@ public class DB_Presa {
         self.stato = stato
     }
     
-    //get Id
+    // Get id
     var getId: Int {
         get {
             return self.id
         }
     }
-    init(id: Int) {
-        self.id = id
-    }
     
+    // Set id
     func setID (_ id: Int) {
         self.id = id
     }
     
-    //get Nome
+    init(id: Int) {
+        self.id = id
+    }
+    
+    // Get Nome
     var getNome: String {
         get {
             return self.nome
         }
     }
     
-    init(nome: String) {
-        self.nome = nome
-    }
-    
+    // Set nome
     func setNome (_ nome: String) {
         self.nome = nome
     }
     
-    //get Stato
+    init (nome: String) {
+        self.nome = nome
+    }
+    
+    // Get Stato
     var getStato: Int {
         get {
             return self.stato
         }
     }
     
-    init(stato: Int) {
-        self.stato = stato
-    }
-    
+    // Set Stato
     func setStato (_ stato: Int) {
         self.stato = stato
     }
     
+    init(stato: Int) {
+        self.stato = stato
+    }
     
 }

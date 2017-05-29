@@ -10,7 +10,7 @@ import UIKit
 
 class ViewControllerDeviceDetails: UITableViewController {
 
-    @IBOutlet var deviceTable: UITableView!
+    @IBOutlet var deviceTable: DeviceDetailsTableView!
     
 //    public var idScelto = 0
 //    public var scarpetta = DB_Presa()
@@ -32,6 +32,10 @@ class ViewControllerDeviceDetails: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func tableView (_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // codice
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
 
 }

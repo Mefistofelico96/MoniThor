@@ -1056,7 +1056,7 @@
         <scene sceneID="sL7-Px-0Ph">
             <objects>
                 <tableViewController id="YqV-Wc-jDN" customClass="ViewControllerDeviceDetails" customModule="Monithor" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="QMB-KA-X0e">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="QMB-KA-X0e" customClass="DeviceDetailsTableView" customModule="Monithor" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -1088,6 +1088,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="label1" destination="LUP-cC-9Lv" id="bcw-Do-yc1"/>
+                                            <outlet property="label2" destination="4FM-PF-63T" id="dE7-aP-x6k"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell" id="fai-wT-DL0" customClass="DeviceDetailsCell" customModule="Monithor" customModuleProvider="target">
@@ -1115,6 +1116,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="label1" destination="gzR-3f-yfj" id="qOQ-gj-f7G"/>
+                                            <outlet property="label2" destination="skZ-za-eDW" id="Do0-f2-Ztu"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell" id="2Jv-c0-dZt" customClass="DeviceDetailsCell" customModule="Monithor" customModuleProvider="target">
@@ -1147,6 +1149,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="label1" destination="8bc-oT-C5v" id="xe7-w5-FTS"/>
+                                            <outlet property="label2" destination="Qau-f6-iMu" id="hIh-Yc-T7z"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell" id="Igh-uD-0Q6" customClass="DeviceDetailsCell" customModule="Monithor" customModuleProvider="target">
@@ -1174,6 +1177,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="label1" destination="aF6-Qe-1WH" id="wqm-yO-Iet"/>
+                                            <outlet property="label2" destination="xse-ud-LjW" id="MES-hz-pSj"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -1224,6 +1228,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="label1" destination="WS6-E2-cfp" id="4iy-aN-OUp"/>
+                                            <outlet property="label2" destination="yGr-fO-v9m" id="9Z7-9h-xxg"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell" id="djV-GA-bKc" customClass="DeviceDetailsCell" customModule="Monithor" customModuleProvider="target">
@@ -1251,6 +1256,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="label1" destination="8oC-Yt-jTg" id="RJe-TI-8Av"/>
+                                            <outlet property="label2" destination="r1b-pW-XYf" id="Tok-3w-osQ"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell" id="rqm-d4-Q2A" customClass="DeviceDetailsCell" customModule="Monithor" customModuleProvider="target">
@@ -1278,6 +1284,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="label1" destination="6oX-NL-3Q0" id="FxC-OI-Hvm"/>
+                                            <outlet property="label2" destination="ddK-Rn-lf7" id="JWl-K6-oid"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell" id="Imf-oZ-JLT" customClass="DeviceDetailsCell" customModule="Monithor" customModuleProvider="target">
@@ -1305,12 +1312,21 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="label1" destination="EJg-BR-Fs1" id="t4d-iT-tXb"/>
+                                            <outlet property="label2" destination="eoc-82-5l8" id="fUK-aN-cGW"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
                         <connections>
+                            <outlet property="cellaCathegory" destination="2Jv-c0-dZt" id="rgd-6u-hpJ"/>
+                            <outlet property="cellaConnectedTo" destination="djV-GA-bKc" id="XZ6-bH-8bx"/>
+                            <outlet property="cellaConsumptions" destination="rqm-d4-Q2A" id="TAc-71-FnU"/>
+                            <outlet property="cellaNome" destination="dnO-YR-jNQ" id="2KQ-XG-VY6"/>
+                            <outlet property="cellaPriority" destination="Igh-uD-0Q6" id="Nxu-rO-mPF"/>
+                            <outlet property="cellaRoom" destination="fai-wT-DL0" id="9RO-by-Nsh"/>
+                            <outlet property="cellaSwitch" destination="TmH-mP-zcE" id="Uta-do-hJL"/>
+                            <outlet property="cellaUsing" destination="Imf-oZ-JLT" id="Uxk-pS-Irk"/>
                             <outlet property="dataSource" destination="YqV-Wc-jDN" id="WhZ-bD-J3N"/>
                             <outlet property="delegate" destination="YqV-Wc-jDN" id="3XY-6t-7BJ"/>
                         </connections>
