@@ -15,7 +15,6 @@ class TableViewCellPowerStrip: UITableViewCell {
     @IBOutlet weak var imageSocket3: UIImageView!
     @IBOutlet weak var powerStripName: UILabel!
     @IBOutlet weak var powerStripRoom: UILabel!
-    @IBOutlet weak var numberConnectedDevice: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

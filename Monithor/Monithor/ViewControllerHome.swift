@@ -239,8 +239,9 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
             
         }
         
-//        if let dest = segue.destination as? CollectionViewController {
-//            dest.people = persone
+//        if let dest = segue.destination as? ViewControllerDeviceDetails {
+//            dest.scarpetta = presaClass[idCellaSelezionata]
+//            dest.idScelto = idCellaSelezionata
 //        }
         
     }

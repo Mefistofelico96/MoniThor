@@ -12,7 +12,10 @@ class ViewControllerDeviceDetails: UITableViewController {
 
     @IBOutlet var deviceTable: UITableView!
     
-    let details = [Details("Name:", "label"), Details("Room:", "label"), Details("Cathegory:", "label"), Details("Priority:", "label"), Details("Switch on:", "label"), Details("Connected at:", "label"), Details("KW/h used:", "label"), Details("Actually using:", "label")]
+//    public var idScelto = 0
+//    public var scarpetta = DB_Presa()
+    
+    let details = [Details("Name:", ""), Details("Room:", ""), Details("Cathegory:", ""), Details("Priority:", ""), Details("Switch on:", ""), Details("Connected at:", ""), Details("KW/h used:", ""), Details("Actually using:", "")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +23,7 @@ class ViewControllerDeviceDetails: UITableViewController {
         self.deviceTable.backgroundColor? = UIColor(red: 245/255, green: 254/255, blue: 247/255, alpha: 1.0)
         self.deviceTable.tableFooterView = UIView()
         self.deviceTable.tableHeaderView = UIView()
+        
         title = "\(details[0].stringa2) Device"
 
     }
