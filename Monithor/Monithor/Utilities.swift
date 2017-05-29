@@ -1,3 +1,10 @@
+//
+//  Utilities.swift
+//  Monithor
+//
+//  Created by Davide Savelli on 19/05/17.
+//  Copyright © 2017 Pipsqueaks. All rights reserved.
+//
 
 import UIKit
 import MapKit
