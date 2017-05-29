@@ -22,7 +22,7 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
     
     var presaClass = [DB_Presa]()
     var timerClass = [DB_Timer]()
-    
+    var raspIP = "10.20.40.24"
     var idCellaSelezionata = 0
     
     @IBAction func editButton(_ sender: Any) {
@@ -66,7 +66,7 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
     func getPresa () {
         
         // Our web service url
-        let URL_GET_SCARPETTE:String = "http://10.20.40.24/monithor/api/GetPresa.php"
+        let URL_GET_SCARPETTE:String = "http://\(raspIP)/monithor/api/GetPresa.php"
         
         // Created NSURL
         let requestURL = NSURL(string: URL_GET_SCARPETTE)
@@ -122,7 +122,7 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
     
     func getTimer (_ i: Int) {
         
-        var URL_GET_Timer = "http://10.20.40.24/monithor/api/GetTimer.php"
+        var URL_GET_Timer = "http://\(raspIP)/monithor/api/GetTimer.php"
         URL_GET_Timer += "?id=\(presaClass[i].getId)"
         
         // Created NSURL
@@ -157,9 +157,24 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
                     
                     // Getting the data at each index
                     let timer = DB_Timer()
+                    
+                    var timerOn = ""
+                    var timerOff = ""
+                    timerOn = timers[j]["timer_on"] as! String!
+                    timerOff = timers[j]["timer_on"] as! String!
+                    
+                    let indextimerOn = timerOn.index(timerOn.startIndex, offsetBy: 5)
+                    timerOn = timerOn.substring(to: indextimerOn)
+                    
+                    let indextimerOff = timerOff.index(timerOff.startIndex, offsetBy: 5)
+                    timerOff = timerOff.substring(to: indextimerOff)
+                    
                     timer.setStatoTimer(timers[j]["stato_timer"] as! Int!)
-                    timer.setTimerOn(timers[j]["timer_on"] as! String!)
-                    timer.setTimerOff(timers[j]["timer_off"] as! String!)
+                    timer.setTimerOn(timerOn)
+                    timer.setTimerOff(timerOff)
+                    self.presaClass[i].db_timer = timer
+                    
+                    timer.setStatoTimer(timers[j]["stato_timer"] as! Int!)
                     self.presaClass[i].db_timer = timer
                     //self.timerClass.append(timer)
                     
@@ -172,8 +187,6 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
         }
         // Executing the task
         task.resume()
-        
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -205,6 +218,7 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
         aCell.timerBegin.text = presaClass[indexPath.row].db_timer.getTimer_on
         aCell.timerEnd.text = presaClass[indexPath.row].db_timer.getTimer_off
         */
+        
         aCell.idCharlie = indexPath.row
         
         return aCell
