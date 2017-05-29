@@ -21,6 +21,7 @@
 		72B38E271ED5B9A8003FED6D /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B38E261ED5B9A8003FED6D /* Details.swift */; };
 		72FBD0FA1ED5BFD800E64878 /* DB_Presa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FBD0F91ED5BFD800E64878 /* DB_Presa.swift */; };
 		72FBD0FC1ED5C04900E64878 /* DB_Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FBD0FB1ED5C04900E64878 /* DB_Timer.swift */; };
+		980C9CA31EDC6E3F00829C19 /* DB_Priorita.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C9CA21EDC6E3F00829C19 /* DB_Priorita.swift */; };
 		DF097B6C1ECC75AE005CF694 /* TableViewCellPowerStrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF097B6B1ECC75AE005CF694 /* TableViewCellPowerStrip.swift */; };
 		DF097B6E1ECC79CB005CF694 /* TableViewCellPowerStripDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF097B6D1ECC79CB005CF694 /* TableViewCellPowerStripDetails.swift */; };
 		DF097B701ECC827C005CF694 /* CollectionViewCellCathegories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF097B6F1ECC827C005CF694 /* CollectionViewCellCathegories.swift */; };
@@ -56,6 +57,7 @@
 		72B38E261ED5B9A8003FED6D /* Details.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
 		72FBD0F91ED5BFD800E64878 /* DB_Presa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB_Presa.swift; sourceTree = "<group>"; };
 		72FBD0FB1ED5C04900E64878 /* DB_Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB_Timer.swift; sourceTree = "<group>"; };
+		980C9CA21EDC6E3F00829C19 /* DB_Priorita.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB_Priorita.swift; sourceTree = "<group>"; };
 		DF097B6B1ECC75AE005CF694 /* TableViewCellPowerStrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellPowerStrip.swift; sourceTree = "<group>"; };
 		DF097B6D1ECC79CB005CF694 /* TableViewCellPowerStripDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellPowerStripDetails.swift; sourceTree = "<group>"; };
 		DF097B6F1ECC827C005CF694 /* CollectionViewCellCathegories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCellCathegories.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				72B38E261ED5B9A8003FED6D /* Details.swift */,
 				72FBD0F91ED5BFD800E64878 /* DB_Presa.swift */,
 				72FBD0FB1ED5C04900E64878 /* DB_Timer.swift */,
+				980C9CA21EDC6E3F00829C19 /* DB_Priorita.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -213,8 +216,7 @@
 				TargetAttributes = {
 					727EB79B1EC9E02E004ECC4F = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 9ZVMLP4E42;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -263,6 +265,7 @@
 				7225900A1ED4453A00FB1D25 /* AddGeotificationViewController.swift in Sources */,
 				DF86EF0A1ECB476400520766 /* ViewControllerPowerStrip.swift in Sources */,
 				72B38E271ED5B9A8003FED6D /* Details.swift in Sources */,
+				980C9CA31EDC6E3F00829C19 /* DB_Priorita.swift in Sources */,
 				DF097B7D1ECF1990005CF694 /* ViewControllerSettingsDetails.swift in Sources */,
 				727EB7A21EC9E02E004ECC4F /* ViewControllerHome.swift in Sources */,
 				72FBD0FA1ED5BFD800E64878 /* DB_Presa.swift in Sources */,
@@ -403,11 +406,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9ZVMLP4E42;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Monithor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.iosda.cohort2.pipsqueaks.Monithor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -416,11 +420,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9ZVMLP4E42;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Monithor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.iosda.cohort2.pipsqueaks.Monithor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
