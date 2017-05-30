@@ -10,21 +10,35 @@ import UIKit
 
 class DeviceDetailsTableViewController: UITableViewController {
     
+    @IBOutlet weak var nameText: UITextField!
+    @IBOutlet weak var roomText: UITextField!
     @IBOutlet var deviceTable: DevicesDetailsTableView!
-    
+    var editButton: UIBarButtonItem!
+
+    @IBOutlet weak var highButton: UIButton!
+    @IBAction func highButtonAct(_ sender: Any) {
+        
+    }
+    @IBOutlet weak var mediumButton: UIButton!
+    @IBAction func mediumButtonAct(_ sender: Any) {
+        
+    }
+    @IBOutlet weak var lowButton: UIButton!
+    @IBAction func lowButtonAct(_ sender: Any) {
+        
+    }
+    @IBOutlet weak var priorityLabel: UILabel!
     let raspID = "10.20.40.24"
     
     public var nome = ""
     public var stato = 0
-    
     public var idNicola = -1
-    
     public var ciabatta = DB_Presa()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         self.view.backgroundColor = UIColor(red: 245/255, green: 254/255, blue: 247/255, alpha: 1.0)
         self.deviceTable.backgroundColor? = UIColor(red: 245/255, green: 254/255, blue: 247/255, alpha: 1.0)
@@ -47,9 +61,108 @@ class DeviceDetailsTableViewController: UITableViewController {
         title = "\(details[0].stringa2) Device"
         
         deviceTable.nameCell.label2.text = nome
+        self.editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(self.edit))
+        navigationItem.rightBarButtonItem = self.editButton
+        
+        nameText.isEnabled = false
+        roomText.isEnabled = false
+        nameText.isHidden = true
+        roomText.isHidden = true
+        highButton.isHidden = true
+        mediumButton.isHidden = true
+        lowButton.isHidden = true
+    }
+    
+    // Abilita editor
+    func edit () {
+        nameText.isEnabled = true
+        roomText.isEnabled = true
+        nameText.isHidden = false
+        roomText.isHidden = false
+        highButton.isHidden = false
+        mediumButton.isHidden = false
+        lowButton.isHidden = false
+        priorityLabel.isHidden = true
+        self.editButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.done))
+        navigationItem.rightBarButtonItem = self.editButton
+    }
+    
+    // Post cambiamenti
+    func done () {
+        nameText.isEnabled = false
+        roomText.isEnabled = false
+        nameText.isHidden = true
+        roomText.isHidden = true
+        highButton.isHidden = true
+        mediumButton.isHidden = true
+        lowButton.isHidden = true
+        priorityLabel.isHidden = false
+        self.editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(self.edit))
+        navigationItem.rightBarButtonItem = self.editButton
+        updateName()
+        deviceTable.nameCell.label2.text = nameText.text!
         
     }
 
+    func updateName () {
+        
+        let URL_Update_nome = "http://\(raspID)/monithor/api/UpdateNome.php"
+        //        URL_Update_nome += "?nome=\(nome)"
+        //        URL_Update_nome += "&id=\(id)"
+        
+        //creating the post parameter by concatenating the keys and values from text field
+        let postParameters = "nome=\(nameText.text!)&id=\(idNicola)";
+        
+        //created NSURL
+        let requestURL = NSURL(string: URL_Update_nome)
+        
+        //creating NSMutableURLRequest
+        let request = NSMutableURLRequest(url: requestURL! as URL)
+        
+        //setting the method to post
+        request.httpMethod = "POST"
+        
+        //adding the parameters to request body
+        request.httpBody = postParameters.data(using: String.Encoding.utf8)
+        
+        
+        //creating a task to send the post request
+        let task = URLSession.shared.dataTask(with: request as URLRequest){
+            data, response, error in
+            
+            if error != nil{
+                print("error is \(String(describing: error))")
+                return;
+            }
+            
+            //parsing the response
+            do {
+                //converting resonse to NSDictionary
+                let myJSON =  try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                
+                //parsing the json
+                if let parseJSON = myJSON {
+                    
+                    //creating a string
+                    var msg : String!
+                    
+                    //getting the json response
+                    msg = parseJSON["message"] as! String?
+                    
+                    //printing the response
+                    print(msg)
+                    
+                }
+            } catch {
+                print(error)
+            }
+            
+        }
+        //executing the task
+        task.resume()
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
