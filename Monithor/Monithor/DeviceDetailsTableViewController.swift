@@ -13,8 +13,6 @@ class DeviceDetailsTableViewController: UITableViewController {
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var roomText: UITextField!
     @IBOutlet var deviceTable: DevicesDetailsTableView!
-    var editButton: UIBarButtonItem!
-
     @IBOutlet weak var highButton: UIButton!
     @IBAction func highButtonAct(_ sender: Any) {
     }
@@ -28,6 +26,8 @@ class DeviceDetailsTableViewController: UITableViewController {
     }
     @IBOutlet weak var priorityLabel: UILabel!
     let raspID = "10.20.40.24"
+    
+    var editButton: UIBarButtonItem!
     
     public var nome = ""
     public var stato = 0
@@ -60,6 +60,7 @@ class DeviceDetailsTableViewController: UITableViewController {
         title = "\(details[0].stringa2) Device"
         
         deviceTable.nameCell.label2.text = nome
+        
         self.editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(self.edit))
         navigationItem.rightBarButtonItem = self.editButton
         
@@ -100,6 +101,7 @@ class DeviceDetailsTableViewController: UITableViewController {
         navigationItem.rightBarButtonItem = self.editButton
         updateName()
         deviceTable.nameCell.label2.text = nameText.text!
+        
         
     }
 
@@ -303,6 +305,12 @@ class DeviceDetailsTableViewController: UITableViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? ViewControllerHome {
+            destination.presaClass[idNicola].setNome(nameText.text!)
+        }
+        
+    }
     
     
 
