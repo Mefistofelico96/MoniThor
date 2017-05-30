@@ -37,7 +37,6 @@
 		DF86EF0A1ECB476400520766 /* ViewControllerPowerStrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF86EF091ECB476400520766 /* ViewControllerPowerStrip.swift */; };
 		DF86EF0C1ECB47BE00520766 /* ViewControllerPowerStripDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF86EF0B1ECB47BE00520766 /* ViewControllerPowerStripDetails.swift */; };
 		DF86EF0E1ECB480100520766 /* ViewControllerCathegories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF86EF0D1ECB480100520766 /* ViewControllerCathegories.swift */; };
-		DF86EF101ECB482900520766 /* ViewControllerDeviceDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF86EF0F1ECB482900520766 /* ViewControllerDeviceDetails.swift */; };
 		DF86EF121ECB485400520766 /* ViewControllerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF86EF111ECB485400520766 /* ViewControllerSettings.swift */; };
 		DF86EF141ECB487700520766 /* ViewControllerNewPowerStrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF86EF131ECB487700520766 /* ViewControllerNewPowerStrip.swift */; };
 /* End PBXBuildFile section */
@@ -75,7 +74,6 @@
 		DF86EF091ECB476400520766 /* ViewControllerPowerStrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPowerStrip.swift; sourceTree = "<group>"; };
 		DF86EF0B1ECB47BE00520766 /* ViewControllerPowerStripDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPowerStripDetails.swift; sourceTree = "<group>"; };
 		DF86EF0D1ECB480100520766 /* ViewControllerCathegories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerCathegories.swift; sourceTree = "<group>"; };
-		DF86EF0F1ECB482900520766 /* ViewControllerDeviceDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDeviceDetails.swift; sourceTree = "<group>"; };
 		DF86EF111ECB485400520766 /* ViewControllerSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerSettings.swift; sourceTree = "<group>"; };
 		DF86EF131ECB487700520766 /* ViewControllerNewPowerStrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerNewPowerStrip.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -181,7 +179,6 @@
 				DF86EF091ECB476400520766 /* ViewControllerPowerStrip.swift */,
 				DF86EF0B1ECB47BE00520766 /* ViewControllerPowerStripDetails.swift */,
 				DF86EF0D1ECB480100520766 /* ViewControllerCathegories.swift */,
-				DF86EF0F1ECB482900520766 /* ViewControllerDeviceDetails.swift */,
 				DF86EF111ECB485400520766 /* ViewControllerSettings.swift */,
 				DF86EF131ECB487700520766 /* ViewControllerNewPowerStrip.swift */,
 				DF097B7C1ECF1990005CF694 /* ViewControllerSettingsDetails.swift */,
@@ -268,7 +265,6 @@
 				DF62E0021ED30C190060BD73 /* Cathegories.swift in Sources */,
 				DF097B701ECC827C005CF694 /* CollectionViewCellCathegories.swift in Sources */,
 				72FF64561EDD7A6A00A34725 /* DevicesDetailsTableView.swift in Sources */,
-				DF86EF101ECB482900520766 /* ViewControllerDeviceDetails.swift in Sources */,
 				7225900A1ED4453A00FB1D25 /* AddGeotificationViewController.swift in Sources */,
 				DF86EF0A1ECB476400520766 /* ViewControllerPowerStrip.swift in Sources */,
 				72B38E271ED5B9A8003FED6D /* Details.swift in Sources */,
