@@ -38,6 +38,7 @@ class ViewControllerSettings: UIViewController, UITableViewDataSource, UITableVi
         self.tableViewSettings.tableFooterView = UIView()
         self.tableViewSettings.tableHeaderView = UIView()
         setCathegory()
+        self.tableViewSettings.isHidden = true
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
