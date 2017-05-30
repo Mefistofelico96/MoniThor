@@ -626,7 +626,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="VII-Cr-YUg" kind="relationship" relationship="viewControllers" id="uJk-sv-ir6"/>
-                        <segue destination="OGW-7u-roM" kind="relationship" relationship="viewControllers" id="1at-Ru-Ng5"/>
                         <segue destination="XcZ-xR-ivG" kind="relationship" relationship="viewControllers" id="bRy-AD-B1G"/>
                         <segue destination="eo9-6q-4MC" kind="relationship" relationship="viewControllers" id="Eae-Z9-Blu"/>
                     </connections>
