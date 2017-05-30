@@ -9,9 +9,13 @@
 import UIKit
 
 class DeviceDetailsTableViewController: UITableViewController {
-
+    
     @IBOutlet var deviceTable: DevicesDetailsTableView!
     
+    public var nome = ""
+    public var stato = 0
+    
+    public var ciabatta = DB_Presa()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,19 +30,11 @@ class DeviceDetailsTableViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
+        let details = [Details("Name:", ""), Details("Room:", ""), Details("Cathegory:", ""), Details("Priority:", ""), Details("Switch on:", ""), Details("Connected at:", ""), Details("KW/h used:", ""), Details("Actually using:", "")]
+
+        title = "\(details[0].stringa2) Device"
         
-//        self.view.backgroundColor = UIColor(red: 245/255, green: 254/255, blue: 247/255, alpha: 1.0)
-//        self.deviceTable.backgroundColor? = UIColor(red: 245/255, green: 254/255, blue: 247/255, alpha: 1.0)
-//        self.deviceTable.tableFooterView = UIView()
-//        self.deviceTable.tableHeaderView = UIView()
-//        navigationItem.rightBarButtonItems = [editButton]
-//        let details = [Details("Name:", ""), Details("Room:", ""), Details("Cathegory:", ""), Details("Priority:", ""), Details("Switch on:", ""), Details("Connected at:", ""), Details("KW/h used:", ""), Details("Actually using:", "")]
-//
-//        
-//        title = "\(details[0].stringa2) Device"
-        
-        
-        deviceTable.nameCell.label2.text = "asdf"
+        deviceTable.nameCell.label2.text = nome
         
     }
 
@@ -76,7 +72,7 @@ class DeviceDetailsTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -86,12 +82,15 @@ class DeviceDetailsTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
+    */
     
+    /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
 
     }
-
+    */
+ 
     /*
     // Override to support conditional rearranging of the table view.
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
@@ -109,5 +108,23 @@ class DeviceDetailsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // Switch timer
+    @IBAction func switchTimer(_ sender: Any) {
+        if 0 == 1 {
+            deviceTable.timerCell.switchTimer.isOn = true
+        }
+        else {
+            deviceTable.timerCell.switchTimer.isOn = true
+        }
+        
+    }
+    
+    @IBAction func categoryButton(_ sender: Any) {
+        
+    }
+    
+    
+    
 
 }

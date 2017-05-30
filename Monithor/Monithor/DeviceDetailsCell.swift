@@ -12,6 +12,8 @@ class DeviceDetailsCell: UITableViewCell {
 
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
+    @IBOutlet weak var categoryButton: UIButton!
+    @IBOutlet weak var switchTimer : UISwitch!
     
     override func awakeFromNib() {
         super.awakeFromNib()

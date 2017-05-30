@@ -98,6 +98,7 @@ class TableViewCellHome: UITableViewCell {
         task.resume()
         
     }
+    
     /*
     @IBAction func switchState(_ sender: Any) {
         

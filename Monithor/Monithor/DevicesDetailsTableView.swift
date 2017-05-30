@@ -13,7 +13,6 @@ class DevicesDetailsTableView: UITableView {
     @IBOutlet weak var nameCell: DeviceDetailsCell!
     @IBOutlet weak var roomCell: DeviceDetailsCell!
     @IBOutlet weak var cathegoryCell: DeviceDetailsCell!
-    
     @IBOutlet weak var priorityCell: DeviceDetailsCell!
     
     @IBOutlet weak var timerCell: DeviceDetailsCell!

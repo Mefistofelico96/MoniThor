@@ -15,6 +15,8 @@ class ViewControllerPowerStripDetails: UIViewController, UITableViewDataSource, 
     @IBOutlet weak var labelKWhUsed: UILabel!
     @IBOutlet weak var tableViewPowerStripDetails: UITableView!
     
+    public var presaFromHome = DB_Presa()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 245/255, green: 254/255, blue: 247/255, alpha: 1.0)
@@ -43,6 +45,15 @@ class ViewControllerPowerStripDetails: UIViewController, UITableViewDataSource, 
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    // Passaggio dati
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? DeviceDetailsTableViewController {
+            destination.nome = "presa di dio"
+            destination.stato = 1 // timer.getStatoTimer
+        }
+        
     }
     
 }

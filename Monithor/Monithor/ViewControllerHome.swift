@@ -223,17 +223,6 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
             aCell.statusButton.imageView?.image = #imageLiteral(resourceName: "Power Button ON")
         }
         
-//        Switch timer
-//        if self.presaClass[indexPath.row].getStato == 1 {
-//            aCell.switchStateTimer.isOn = true
-//        }
-//        else {
-//            aCell.switchStateTimer.isOn = false
-//        }
-//        
-//        aCell.timerBegin.text = presaClass[indexPath.row].db_timer.getTimer_on
-//        aCell.timerEnd.text = presaClass[indexPath.row].db_timer.getTimer_off
-        
         aCell.idCharlie = indexPath.row
         
         return aCell
@@ -245,17 +234,20 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    // Passaggio dati
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination1 = segue.destination as? TableViewCellHome {
             destination1.statoFromHome = presaClass[idCellaSelezionata].getStato
             destination1.statoTimer = timerClass[idCellaSelezionata].getStatoTimer
             
         }
-        
-//        if let destination2 = segue.destination as? ViewControllerDeviceDetails {
-//            destination2.statoFromHome = presaClass[idCellaSelezionata].getStato
-//            destination2.statoTimer = timerClass[idCellaSelezionata].getStatoTimer
-//        }
+        if let destination2 = segue.destination as? DeviceDetailsTableViewController {
+//            destination2.ciabatta.setNome(presaClass[idCellaSelezionata].getNome)
+//            destination2.ciabatta.db_timer.setStatoTimer(presaClass[idCellaSelezionata].db_timer.getStatoTimer)
+            destination2.nome = presaClass[idCellaSelezionata].getNome
+            destination2.stato = presaClass[idCellaSelezionata].db_timer.getStatoTimer
+            
+        }
         
     }
     
