@@ -22,7 +22,6 @@ class ViewControllerSettings: UIViewController, UITableViewDataSource, UITableVi
     
     var settingsType: [Cathegory] = []
     func setCathegory() {
-        settingsType.append(Cathegory(name: "Geofence", image: #imageLiteral(resourceName: "Geofence")))
         settingsType.append(Cathegory(name: "Change E-Mail", image: #imageLiteral(resourceName: "ChangeMail")))
         settingsType.append(Cathegory(name: "Change Pin", image: #imageLiteral(resourceName: "ChangePin")))
         settingsType.append(Cathegory(name: "Reset Stats", image: #imageLiteral(resourceName: "Reset")))
@@ -33,6 +32,7 @@ class ViewControllerSettings: UIViewController, UITableViewDataSource, UITableVi
         navigationController?.navigationBar.tintColor = UIColor(red: 10/255, green: 65/255, blue: 84/255, alpha: 1)
         navigationController?.navigationBar.barTintColor = UIColor(colorLiteralRed: 174/255, green: 227/255, blue: 208/255, alpha: 1)
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor(red: 10/255, green: 65/255, blue: 84/255, alpha: 1)]
+        
         self.view.backgroundColor = UIColor(red: 245/255, green: 254/255, blue: 247/255, alpha: 1.0)
         self.tableViewSettings.backgroundColor = UIColor(red: 245/255, green: 254/255, blue: 247/255, alpha: 1.0)
         self.tableViewSettings.tableFooterView = UIView()
