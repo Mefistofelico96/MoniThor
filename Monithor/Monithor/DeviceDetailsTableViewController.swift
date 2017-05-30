@@ -12,8 +12,12 @@ class DeviceDetailsTableViewController: UITableViewController {
     
     @IBOutlet var deviceTable: DevicesDetailsTableView!
     
+    let raspID = "10.20.40.24"
+    
     public var nome = ""
     public var stato = 0
+    
+    public var idNicola = -1
     
     public var ciabatta = DB_Presa()
     
@@ -29,6 +33,14 @@ class DeviceDetailsTableViewController: UITableViewController {
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
+        
+        
+        if stato == 0 {
+            deviceTable.timerCell.switchTimer.isOn = false
+        }
+        else {
+            deviceTable.timerCell.switchTimer.isOn = true
+        }
         
         let details = [Details("Name:", ""), Details("Room:", ""), Details("Cathegory:", ""), Details("Priority:", ""), Details("Switch on:", ""), Details("Connected at:", ""), Details("KW/h used:", ""), Details("Actually using:", "")]
 
@@ -109,18 +121,73 @@ class DeviceDetailsTableViewController: UITableViewController {
     }
     */
     
-    // Switch timer
-    @IBAction func switchTimer(_ sender: Any) {
-        if 0 == 1 {
+    @IBAction func switchState(_ sender: Any) {
+        
+        if stato == 0 {
             deviceTable.timerCell.switchTimer.isOn = true
+            stato = 1
         }
         else {
-            deviceTable.timerCell.switchTimer.isOn = true
+            deviceTable.timerCell.switchTimer.isOn = false
+            stato = 0
         }
+        
+        let URL_Update_StatoTimer = "http://\(raspID)/monithor/api/Update_StatoTimer.php"
+        
+        // Creating the post parameter by concatenating the keys and values from text field
+        let postParameters = "stato_timer=\(stato)&id_presa=\(idNicola)"
+        
+        // Created NSURL
+        let requestURL = NSURL(string: URL_Update_StatoTimer)
+        
+        // Creating NSMutableURLRequest
+        let request = NSMutableURLRequest(url: requestURL! as URL)
+        
+        // Setting the method to post
+        request.httpMethod = "POST"
+        
+        // Adding the parameters to request body
+        request.httpBody = postParameters.data(using: String.Encoding.utf8)
+        
+        // Creating a task to send the post request
+        let task = URLSession.shared.dataTask(with: request as URLRequest){
+            data, response, error in
+            
+            if error != nil{
+                print("error is \(String(describing: error))")
+                return;
+            }
+            
+            // Parsing the response
+            do {
+                // Converting resonse to NSDictionary
+                let myJSON =  try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                
+                // Parsing the json
+                if let parseJSON = myJSON {
+                    
+                    //creating a string
+                    var msg: String!
+                    
+                    //getting the json response
+                    msg = parseJSON["message"] as! String?
+                    
+                    //printing the response
+                    print(msg)
+                    
+                }
+            } catch {
+                print(error)
+            }
+            
+        }
+        //executing the task
+        task.resume()
         
     }
     
     @IBAction func categoryButton(_ sender: Any) {
+        // code
         
     }
     

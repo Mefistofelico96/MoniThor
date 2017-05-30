@@ -230,8 +230,13 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showDeviceDetailsHome", sender: nil)
-        idCellaSelezionata = indexPath.row
+        //idCellaSelezionata = indexPath.row
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        idCellaSelezionata = indexPath.row
+        return indexPath
     }
     
     // Passaggio dati
@@ -246,6 +251,8 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
 //            destination2.ciabatta.db_timer.setStatoTimer(presaClass[idCellaSelezionata].db_timer.getStatoTimer)
             destination2.nome = presaClass[idCellaSelezionata].getNome
             destination2.stato = presaClass[idCellaSelezionata].db_timer.getStatoTimer
+            
+            destination2.idNicola = presaClass[idCellaSelezionata].getId
             
         }
         

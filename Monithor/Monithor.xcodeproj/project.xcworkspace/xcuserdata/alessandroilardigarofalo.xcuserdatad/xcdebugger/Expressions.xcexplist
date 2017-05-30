@@ -11,6 +11,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "DeviceDetailsTableViewController.switchState(Any) -&gt; ():DeviceDetailsTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "idNicola">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ViewControllerHome.(getData() -&gt; ()).(closure #1):ViewControllerHome.swift">
       </ContextState>
    </ContextStates>

@@ -1181,7 +1181,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="onTintColor" red="0.20784313730000001" green="0.52549019610000003" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
-                                                        <action selector="switchTimer:" destination="YqV-Wc-jDN" eventType="valueChanged" id="r7i-Sx-7oO"/>
+                                                        <action selector="switchState:" destination="YqV-Wc-jDN" eventType="valueChanged" id="TxE-aU-lo3"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
