@@ -68,6 +68,9 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
         self.tableViewHome.tableHeaderView = UIView()
         labelUserName.text = "User"
         labelUserName.text = defaults.object(forKey: "username") as? String
+        if defaults.object(forKey: "username") as? String == "" {
+            labelUserName.text = "Default User"
+        }
         labelNumberPowerStrip.text = "\(counter) Power Strips connected"
         newNameTextfield.isHidden = true
         doneButtonOutlet.isHidden = true
