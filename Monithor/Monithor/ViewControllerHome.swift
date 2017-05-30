@@ -45,6 +45,10 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
         self.view.endEditing(true)
     }
     
+    @IBAction func refresh(_ sender: Any) {
+        self.getPresa()
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
