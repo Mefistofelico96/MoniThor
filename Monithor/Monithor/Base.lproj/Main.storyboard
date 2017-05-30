@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kHm-pB-jeV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kHm-pB-jeV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1016,7 +1016,7 @@
                         <sections>
                             <tableViewSection headerTitle="Device's Infos" id="b5K-UC-lAc">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell" id="dnO-YR-jNQ" customClass="DeviceDetailsCell" customModule="Monithor" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="detailCell" id="dnO-YR-jNQ" customClass="DeviceDetailsCell" customModule="Monithor" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dnO-YR-jNQ" id="gDV-v3-eE4">
@@ -1051,7 +1051,7 @@
                                             <outlet property="label2" destination="4FM-PF-63T" id="dE7-aP-x6k"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell" id="fai-wT-DL0" customClass="DeviceDetailsCell" customModule="Monithor" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="detailCell" id="fai-wT-DL0" customClass="DeviceDetailsCell" customModule="Monithor" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fai-wT-DL0" id="idb-BB-5PK">
@@ -1123,7 +1123,7 @@
                                             <outlet property="label2" destination="Qau-f6-iMu" id="hIh-Yc-T7z"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell" id="Igh-uD-0Q6" customClass="DeviceDetailsCell" customModule="Monithor" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="detailCell" id="Igh-uD-0Q6" customClass="DeviceDetailsCell" customModule="Monithor" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="187.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Igh-uD-0Q6" id="CZn-LN-LTv">
@@ -1138,32 +1138,38 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xse-ud-LjW">
-                                                    <rect key="frame" x="80" y="11" width="190" height="21"/>
+                                                    <rect key="frame" x="80" y="11" width="69" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.20784313730000001" green="0.52549019610000003" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="loX-4e-azi">
-                                                    <rect key="frame" x="80" y="7" width="32" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="loX-4e-azi">
+                                                    <rect key="frame" x="76" y="11" width="41" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="High"/>
+                                                    <state key="normal" image="High">
+                                                        <color key="titleColor" red="0.039215686270000001" green="0.72941176470000002" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="highButtonAct:" destination="YqV-Wc-jDN" eventType="touchUpInside" id="TaU-NN-8NA"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dW-UC-NAx">
-                                                    <rect key="frame" x="120" y="7" width="56" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dW-UC-NAx">
+                                                    <rect key="frame" x="122" y="11" width="64" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Medium"/>
+                                                    <state key="normal" image="Medium">
+                                                        <color key="titleColor" red="0.039215686270000001" green="0.72941176470000002" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="mediumButtonAct:" destination="YqV-Wc-jDN" eventType="touchUpInside" id="Ubn-ob-fge"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btb-Zt-NLa">
-                                                    <rect key="frame" x="184" y="7" width="30" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btb-Zt-NLa">
+                                                    <rect key="frame" x="191" y="11" width="36" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Low"/>
+                                                    <state key="normal" image="Low">
+                                                        <color key="titleColor" red="0.039215686270000001" green="0.72941176470000002" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="lowButtonAct:" destination="YqV-Wc-jDN" eventType="touchUpInside" id="Ehy-Ex-wLC"/>
                                                     </connections>
@@ -1179,7 +1185,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Timer and Stats" id="SFw-Bn-yAa">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell" id="TmH-mP-zcE" customClass="DeviceDetailsCell" customModule="Monithor" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="detailCell" id="TmH-mP-zcE" customClass="DeviceDetailsCell" customModule="Monithor" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="287.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TmH-mP-zcE" id="zaj-OT-rcg">
@@ -1194,7 +1200,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6b2-5Q-XBk">
-                                                    <rect key="frame" x="298" y="4" width="51" height="31"/>
+                                                    <rect key="frame" x="298" y="6" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="onTintColor" red="0.20784313730000001" green="0.52549019610000003" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
@@ -1230,7 +1236,7 @@
                                             <outlet property="switchTimer" destination="6b2-5Q-XBk" id="bDe-1h-Tzi"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell" id="djV-GA-bKc" customClass="DeviceDetailsCell" customModule="Monithor" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="detailCell" id="djV-GA-bKc" customClass="DeviceDetailsCell" customModule="Monithor" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="331.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="djV-GA-bKc" id="ODv-Jd-Dv8">
@@ -1258,7 +1264,7 @@
                                             <outlet property="label2" destination="r1b-pW-XYf" id="Tok-3w-osQ"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell" id="rqm-d4-Q2A" customClass="DeviceDetailsCell" customModule="Monithor" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="detailCell" id="rqm-d4-Q2A" customClass="DeviceDetailsCell" customModule="Monithor" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="375.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rqm-d4-Q2A" id="l14-nr-2kA">
@@ -1286,7 +1292,7 @@
                                             <outlet property="label2" destination="ddK-Rn-lf7" id="JWl-K6-oid"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell" id="Imf-oZ-JLT" customClass="DeviceDetailsCell" customModule="Monithor" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="detailCell" id="Imf-oZ-JLT" customClass="DeviceDetailsCell" customModule="Monithor" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="419.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Imf-oZ-JLT" id="aLL-Hl-QXE">
@@ -1356,7 +1362,10 @@
         <image name="DefaultPSImage" width="50" height="50"/>
         <image name="EnergySaved" width="79" height="80"/>
         <image name="Geofence-1" width="25" height="25"/>
+        <image name="High" width="41" height="20"/>
         <image name="Home" width="24" height="24"/>
+        <image name="Low" width="36" height="20"/>
+        <image name="Medium" width="64" height="20"/>
         <image name="MoneySaved" width="79" height="80"/>
         <image name="PS" width="118" height="42"/>
         <image name="Power Button ON" width="40" height="40"/>

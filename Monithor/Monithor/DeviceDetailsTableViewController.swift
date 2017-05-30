@@ -17,7 +17,6 @@ class DeviceDetailsTableViewController: UITableViewController {
 
     @IBOutlet weak var highButton: UIButton!
     @IBAction func highButtonAct(_ sender: Any) {
-        
     }
     @IBOutlet weak var mediumButton: UIButton!
     @IBAction func mediumButtonAct(_ sender: Any) {
