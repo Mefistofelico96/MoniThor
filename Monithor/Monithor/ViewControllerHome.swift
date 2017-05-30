@@ -25,7 +25,7 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
     var presaClass = [DB_Presa]()
     var timerClass = [DB_Timer]()
     
-    var raspIP = "10.20.41.5"
+    var raspIP = "10.20.40.24"
     var idCellaSelezionata = 0
     var counter = 0
     

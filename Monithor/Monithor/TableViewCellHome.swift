@@ -22,7 +22,7 @@ class TableViewCellHome: UITableViewCell {
     public var statoFromHome = 0
     public var statoTimer = 0
     
-    var raspIP = "10.20.41.5"
+    var raspIP = "10.20.40.24"
     
     override func awakeFromNib() {
         super.awakeFromNib()
