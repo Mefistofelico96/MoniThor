@@ -46,6 +46,7 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     @IBAction func refresh(_ sender: Any) {
+        self.presaClass.removeAll()
         self.getPresa()
         self.homeTableView.reloadData()
     }
@@ -75,8 +76,12 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
         newNameTextfield.isHidden = true
         doneButtonOutlet.isHidden = true
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.presaClass.removeAll()
         self.getPresa()
-        
+        self.homeTableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -253,7 +258,10 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
 //            destination2.ciabatta.setNome(presaClass[idCellaSelezionata].getNome)
 //            destination2.ciabatta.db_timer.setStatoTimer(presaClass[idCellaSelezionata].db_timer.getStatoTimer)
             destination2.nome = presaClass[idCellaSelezionata].getNome
-            destination2.stato = presaClass[idCellaSelezionata].db_timer.getStatoTimer
+            destination2.statoTim = presaClass[idCellaSelezionata].db_timer.getStatoTimer
+            
+            destination2.timerOn = presaClass[idCellaSelezionata].db_timer.getTimer_on
+            destination2.timerOff = presaClass[idCellaSelezionata].db_timer.getTimer_off
             
             destination2.idNicola = presaClass[idCellaSelezionata].getId
             

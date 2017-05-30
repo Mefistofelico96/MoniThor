@@ -30,7 +30,11 @@ class DeviceDetailsTableViewController: UITableViewController {
     var editButton: UIBarButtonItem!
     
     public var nome = ""
-    public var stato = 0
+    public var statoTim = 0
+    public var timerOn = ""
+    public var timerOff = ""
+    
+    
     public var idNicola = -1
     public var ciabatta = DB_Presa()
     
@@ -48,7 +52,7 @@ class DeviceDetailsTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
         
         
-        if stato == 0 {
+        if statoTim == 0 {
             deviceTable.timerCell.switchTimer.isOn = false
         }
         else {
@@ -63,6 +67,9 @@ class DeviceDetailsTableViewController: UITableViewController {
         
         self.editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(self.edit))
         navigationItem.rightBarButtonItem = self.editButton
+        
+        deviceTable.timerCell.label2.text = timerOn
+        deviceTable.timerCell.label.text = timerOff
         
         nameText.isEnabled = false
         roomText.isEnabled = false
@@ -244,19 +251,19 @@ class DeviceDetailsTableViewController: UITableViewController {
     
     @IBAction func switchState(_ sender: Any) {
         
-        if stato == 0 {
+        if statoTim == 0 {
             deviceTable.timerCell.switchTimer.isOn = true
-            stato = 1
+            statoTim = 1
         }
         else {
             deviceTable.timerCell.switchTimer.isOn = false
-            stato = 0
+            statoTim = 0
         }
         
         let URL_Update_StatoTimer = "http://\(raspID)/monithor/api/Update_StatoTimer.php"
         
         // Creating the post parameter by concatenating the keys and values from text field
-        let postParameters = "stato_timer=\(stato)&id_presa=\(idNicola)"
+        let postParameters = "stato_timer=\(statoTim)&id_presa=\(idNicola)"
         
         // Created NSURL
         let requestURL = NSURL(string: URL_Update_StatoTimer)
@@ -315,7 +322,7 @@ class DeviceDetailsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ViewControllerHome {
             destination.presaClass[idNicola].setNome(nameText.text!)
-            destination.presaClass[idNicola].db_timer.setStatoTimer(stato)
+            destination.presaClass[idNicola].db_timer.setStatoTimer(statoTim)
             
         }
         

@@ -51,7 +51,7 @@ class ViewControllerPowerStripDetails: UIViewController, UITableViewDataSource, 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? DeviceDetailsTableViewController {
             destination.nome = "presa1"
-            destination.stato = 1 // timer.getStatoTimer
+            destination.statoTim = 1 // timer.getStatoTimer
         }
         
     }
