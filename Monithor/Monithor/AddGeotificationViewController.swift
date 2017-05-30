@@ -34,6 +34,8 @@ class AddGeotificationViewController: UITableViewController {
         navigationItem.rightBarButtonItems = [addButton, zoomButton]
         self.view.backgroundColor = UIColor(red: 245/255, green: 254/255, blue: 247/255, alpha: 1.0)
         self.tableView.backgroundColor = UIColor(red: 245/255, green: 254/255, blue: 247/255, alpha: 1.0)
+        self.tableView.tableFooterView = UIView()
+        self.tableView.tableHeaderView = UIView()
         addButton.isEnabled = false
     }
     
