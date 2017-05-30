@@ -95,6 +95,7 @@ class DeviceDetailsTableViewController: UITableViewController {
     
     // Post cambiamenti
     func done () {
+        self.view.endEditing(true)
         nameText.isEnabled = false
         roomText.isEnabled = false
         nameText.isHidden = true
