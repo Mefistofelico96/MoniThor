@@ -242,10 +242,10 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
             
         }
         
-        if let destination2 = segue.destination as? ViewControllerDeviceDetails {
-            destination2.statoFromHome = presaClass[idCellaSelezionata].getStato
-            destination2.statoTimer = timerClass[idCellaSelezionata].getStatoTimer
-        }
+//        if let destination2 = segue.destination as? ViewControllerDeviceDetails {
+//            destination2.statoFromHome = presaClass[idCellaSelezionata].getStato
+//            destination2.statoTimer = timerClass[idCellaSelezionata].getStatoTimer
+//        }
         
     }
     
