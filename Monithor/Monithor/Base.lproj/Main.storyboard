@@ -126,7 +126,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="cUF-bT-bEb"/>
+                    <navigationItem key="navigationItem" title="Home" id="cUF-bT-bEb">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="FIE-MB-HZV"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="doneButtonOutlet" destination="QKl-ZY-7CR" id="YfF-p3-fhY"/>
                         <outlet property="editButtonOutlet" destination="Axt-LK-qo2" id="CjG-Jl-WEr"/>
@@ -135,6 +137,7 @@
                         <outlet property="labelNumberPowerStrip" destination="eBX-VA-YMF" id="nbI-T2-F0a"/>
                         <outlet property="labelUserName" destination="AqA-pd-OTj" id="3Kv-2n-V4h"/>
                         <outlet property="newNameTextfield" destination="nlW-bb-dAI" id="uoT-ZY-fND"/>
+                        <outlet property="refreshButton" destination="FIE-MB-HZV" id="wqI-at-ddM"/>
                         <outlet property="tableViewHome" destination="w6X-sg-7Zz" id="c5M-Lg-eUV"/>
                         <segue destination="YqV-Wc-jDN" kind="show" identifier="showDeviceDetailsHome" id="j8Z-j3-KEq"/>
                     </connections>
