@@ -1059,10 +1059,10 @@
             </objects>
             <point key="canvasLocation" x="4190" y="651"/>
         </scene>
-        <!--View Controller Device Details-->
+        <!--Device Details-->
         <scene sceneID="sL7-Px-0Ph">
             <objects>
-                <tableViewController id="YqV-Wc-jDN" customClass="ViewControllerDeviceDetails" customModule="Monithor" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Device Details" id="YqV-Wc-jDN" customClass="ViewControllerDeviceDetails" customModule="Monithor" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="QMB-KA-X0e" customClass="DeviceDetailsTableView" customModule="Monithor" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1325,21 +1325,12 @@
                                 </cells>
                             </tableViewSection>
                         </sections>
-                        <connections>
-                            <outlet property="cellaCathegory" destination="2Jv-c0-dZt" id="rgd-6u-hpJ"/>
-                            <outlet property="cellaConnectedTo" destination="djV-GA-bKc" id="XZ6-bH-8bx"/>
-                            <outlet property="cellaConsumptions" destination="rqm-d4-Q2A" id="TAc-71-FnU"/>
-                            <outlet property="cellaNome" destination="dnO-YR-jNQ" id="2KQ-XG-VY6"/>
-                            <outlet property="cellaPriority" destination="Igh-uD-0Q6" id="Nxu-rO-mPF"/>
-                            <outlet property="cellaRoom" destination="fai-wT-DL0" id="9RO-by-Nsh"/>
-                            <outlet property="cellaSwitch" destination="TmH-mP-zcE" id="Uta-do-hJL"/>
-                            <outlet property="cellaUsing" destination="Imf-oZ-JLT" id="Uxk-pS-Irk"/>
-                            <outlet property="dataSource" destination="YqV-Wc-jDN" id="WhZ-bD-J3N"/>
-                            <outlet property="delegate" destination="YqV-Wc-jDN" id="3XY-6t-7BJ"/>
-                        </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Device Details" id="TjJ-xD-7hg">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="fJW-Pv-ddW"/>
+                    </navigationItem>
                     <connections>
-                        <outlet property="deviceTable" destination="QMB-KA-X0e" id="J53-t8-WV3"/>
+                        <outlet property="editButton" destination="fJW-Pv-ddW" id="KQQ-s2-1gj"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hhg-Zd-w5m" userLabel="First Responder" sceneMemberID="firstResponder"/>
