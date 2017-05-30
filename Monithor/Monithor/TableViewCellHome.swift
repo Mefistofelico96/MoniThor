@@ -22,6 +22,8 @@ class TableViewCellHome: UITableViewCell {
     public var statoFromHome = 0
     public var statoTimer = 0
     
+    var raspIP = "10.20.41.5"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = UIColor(red: 245/255, green: 254/255, blue: 247/255, alpha: 1.0)
@@ -43,7 +45,7 @@ class TableViewCellHome: UITableViewCell {
             statoFromHome = 0
         }
         
-        let URL_Update_stato = "http://10.20.40.24/monithor/api/UpdateStato.php"
+        let URL_Update_stato = "http://\(raspIP)/monithor/api/UpdateStato.php"
         
         //creating the post parameter by concatenating the keys and values from text field
         let postParameters = "stato=\(statoFromHome)&id=\(idCharlie + 1)"

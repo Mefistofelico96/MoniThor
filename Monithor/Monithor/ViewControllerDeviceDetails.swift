@@ -12,10 +12,8 @@ class ViewControllerDeviceDetails: UITableViewController {
 
     @IBOutlet var deviceTable: DeviceDetailsTableView!
     
-//    public var idScelto = 0
-//    public var scarpetta = DB_Presa()
-    
-    let details = [Details("Name:", ""), Details("Room:", ""), Details("Cathegory:", ""), Details("Priority:", ""), Details("Switch on:", ""), Details("Connected at:", ""), Details("KW/h used:", ""), Details("Actually using:", "")]
+    public var statoFromHome = 0
+    public var statoTimer = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +22,11 @@ class ViewControllerDeviceDetails: UITableViewController {
         self.deviceTable.tableFooterView = UIView()
         self.deviceTable.tableHeaderView = UIView()
         
-        title = "\(details[0].stringa2) Device"
+        // let details = [Details("Name:", ""), Details("Room:", ""), Details("Cathegory:", ""), Details("Priority:", ""), Details("Switch on:", ""), Details("Connected at:", ""), Details("KW/h used:", ""), Details("Actually using:", "")]
+        
+        // deviceTable.cellaNome.label2.text = nomeDevice
+        
+        // title = "\(details[0].stringa2) Device"
 
     }
 

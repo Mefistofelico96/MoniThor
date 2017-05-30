@@ -24,7 +24,7 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
     var presaClass = [DB_Presa]()
     var timerClass = [DB_Timer]()
     
-    var raspIP = "10.20.40.24"
+    var raspIP = "10.20.41.5"
     var idCellaSelezionata = 0
     var counter = 0
     
@@ -230,21 +230,22 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showDeviceDetails", sender: nil)
+        performSegue(withIdentifier: "showDeviceDetailsHome", sender: nil)
         idCellaSelezionata = indexPath.row
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let dest = segue.destination as? TableViewCellHome {
-            dest.statoFromHome = presaClass[idCellaSelezionata].getStato
-            dest.statoTimer = timerClass[idCellaSelezionata].getStatoTimer
+        if let destination1 = segue.destination as? TableViewCellHome {
+            destination1.statoFromHome = presaClass[idCellaSelezionata].getStato
+            destination1.statoTimer = timerClass[idCellaSelezionata].getStatoTimer
             
         }
-//        if let dest = segue.destination as? ViewControllerDeviceDetails {
-//            dest.scarpetta = presaClass[idCellaSelezionata]
-//            dest.idScelto = idCellaSelezionata
-//        }
+        
+        if let destination2 = segue.destination as? ViewControllerDeviceDetails {
+            destination2.statoFromHome = presaClass[idCellaSelezionata].getStato
+            destination2.statoTimer = timerClass[idCellaSelezionata].getStatoTimer
+        }
         
     }
     

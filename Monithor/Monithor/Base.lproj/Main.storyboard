@@ -136,7 +136,7 @@
                         <outlet property="labelUserName" destination="AqA-pd-OTj" id="3Kv-2n-V4h"/>
                         <outlet property="newNameTextfield" destination="nlW-bb-dAI" id="uoT-ZY-fND"/>
                         <outlet property="tableViewHome" destination="w6X-sg-7Zz" id="c5M-Lg-eUV"/>
-                        <segue destination="YqV-Wc-jDN" kind="show" identifier="showDeviceDetails" id="j8Z-j3-KEq"/>
+                        <segue destination="YqV-Wc-jDN" kind="show" identifier="showDeviceDetailsHome" id="j8Z-j3-KEq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
