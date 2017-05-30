@@ -50,7 +50,7 @@ class ViewControllerPowerStripDetails: UIViewController, UITableViewDataSource, 
     // Passaggio dati
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? DeviceDetailsTableViewController {
-            destination.nome = "presa di dio"
+            destination.nome = "presa1"
             destination.stato = 1 // timer.getStatoTimer
         }
         

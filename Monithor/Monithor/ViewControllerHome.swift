@@ -47,7 +47,7 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBAction func refresh(_ sender: Any) {
         self.getPresa()
-        
+        self.homeTableView.reloadData()
     }
     
     override func viewDidLoad() {

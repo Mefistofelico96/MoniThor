@@ -73,6 +73,12 @@ class DeviceDetailsTableViewController: UITableViewController {
         lowButton.isHidden = true
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.deviceTable.reloadData()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.deviceTable.reloadData()
+    }
     // Abilita editor
     func edit () {
         nameText.isEnabled = true
@@ -101,7 +107,7 @@ class DeviceDetailsTableViewController: UITableViewController {
         navigationItem.rightBarButtonItem = self.editButton
         updateName()
         deviceTable.nameCell.label2.text = nameText.text!
-        
+        self.deviceTable.reloadData()
         
     }
 
@@ -308,6 +314,8 @@ class DeviceDetailsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ViewControllerHome {
             destination.presaClass[idNicola].setNome(nameText.text!)
+            destination.presaClass[idNicola].db_timer.setStatoTimer(stato)
+            
         }
         
     }
