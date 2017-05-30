@@ -20,6 +20,8 @@
 		72B38E271ED5B9A8003FED6D /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B38E261ED5B9A8003FED6D /* Details.swift */; };
 		72FBD0FA1ED5BFD800E64878 /* DB_Presa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FBD0F91ED5BFD800E64878 /* DB_Presa.swift */; };
 		72FBD0FC1ED5C04900E64878 /* DB_Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FBD0FB1ED5C04900E64878 /* DB_Timer.swift */; };
+		72FF64541EDD796C00A34725 /* DeviceDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FF64531EDD796C00A34725 /* DeviceDetailsTableViewController.swift */; };
+		72FF64561EDD7A6A00A34725 /* DevicesDetailsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FF64551EDD7A6A00A34725 /* DevicesDetailsTableView.swift */; };
 		980C9CA31EDC6E3F00829C19 /* DB_Priorita.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C9CA21EDC6E3F00829C19 /* DB_Priorita.swift */; };
 		985A31E51EDD630000A183B2 /* DB_Misura_Generica.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985A31E41EDD630000A183B2 /* DB_Misura_Generica.swift */; };
 		DF097B6C1ECC75AE005CF694 /* TableViewCellPowerStrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF097B6B1ECC75AE005CF694 /* TableViewCellPowerStrip.swift */; };
@@ -56,6 +58,8 @@
 		72B38E261ED5B9A8003FED6D /* Details.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
 		72FBD0F91ED5BFD800E64878 /* DB_Presa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB_Presa.swift; sourceTree = "<group>"; };
 		72FBD0FB1ED5C04900E64878 /* DB_Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB_Timer.swift; sourceTree = "<group>"; };
+		72FF64531EDD796C00A34725 /* DeviceDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceDetailsTableViewController.swift; sourceTree = "<group>"; };
+		72FF64551EDD7A6A00A34725 /* DevicesDetailsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicesDetailsTableView.swift; sourceTree = "<group>"; };
 		980C9CA21EDC6E3F00829C19 /* DB_Priorita.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB_Priorita.swift; sourceTree = "<group>"; };
 		985A31E41EDD630000A183B2 /* DB_Misura_Generica.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB_Misura_Generica.swift; sourceTree = "<group>"; };
 		DF097B6B1ECC75AE005CF694 /* TableViewCellPowerStrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellPowerStrip.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 				72FBD0FB1ED5C04900E64878 /* DB_Timer.swift */,
 				980C9CA21EDC6E3F00829C19 /* DB_Priorita.swift */,
 				985A31E41EDD630000A183B2 /* DB_Misura_Generica.swift */,
+				72FF64551EDD7A6A00A34725 /* DevicesDetailsTableView.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 				DF86EF111ECB485400520766 /* ViewControllerSettings.swift */,
 				DF86EF131ECB487700520766 /* ViewControllerNewPowerStrip.swift */,
 				DF097B7C1ECF1990005CF694 /* ViewControllerSettingsDetails.swift */,
+				72FF64531EDD796C00A34725 /* DeviceDetailsTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -261,6 +267,7 @@
 				7217511B1ECF39B500126E41 /* RadiusCell.swift in Sources */,
 				DF62E0021ED30C190060BD73 /* Cathegories.swift in Sources */,
 				DF097B701ECC827C005CF694 /* CollectionViewCellCathegories.swift in Sources */,
+				72FF64561EDD7A6A00A34725 /* DevicesDetailsTableView.swift in Sources */,
 				DF86EF101ECB482900520766 /* ViewControllerDeviceDetails.swift in Sources */,
 				7225900A1ED4453A00FB1D25 /* AddGeotificationViewController.swift in Sources */,
 				DF86EF0A1ECB476400520766 /* ViewControllerPowerStrip.swift in Sources */,
@@ -272,6 +279,7 @@
 				7225900C1ED4455100FB1D25 /* Geotification.swift in Sources */,
 				DF86EF141ECB487700520766 /* ViewControllerNewPowerStrip.swift in Sources */,
 				DF86EF0E1ECB480100520766 /* ViewControllerCathegories.swift in Sources */,
+				72FF64541EDD796C00A34725 /* DeviceDetailsTableViewController.swift in Sources */,
 				7225900E1ED4455700FB1D25 /* GeotificationsViewController.swift in Sources */,
 				DF097B6C1ECC75AE005CF694 /* TableViewCellPowerStrip.swift in Sources */,
 				985A31E51EDD630000A183B2 /* DB_Misura_Generica.swift in Sources */,

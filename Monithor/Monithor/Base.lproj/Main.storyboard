@@ -1062,8 +1062,8 @@
         <!--Device Details-->
         <scene sceneID="sL7-Px-0Ph">
             <objects>
-                <tableViewController title="Device Details" id="YqV-Wc-jDN" customClass="ViewControllerDeviceDetails" customModule="Monithor" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="QMB-KA-X0e" customClass="DeviceDetailsTableView" customModule="Monithor" customModuleProvider="target">
+                <tableViewController title="Device Details" id="YqV-Wc-jDN" customClass="DeviceDetailsTableViewController" customModule="Monithor" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="QMB-KA-X0e" customClass="DevicesDetailsTableView" customModule="Monithor" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -1325,12 +1325,20 @@
                                 </cells>
                             </tableViewSection>
                         </sections>
+                        <connections>
+                            <outlet property="cathegoryCell" destination="2Jv-c0-dZt" id="820-yF-pxP"/>
+                            <outlet property="connectedCell" destination="djV-GA-bKc" id="FE9-CX-LkN"/>
+                            <outlet property="consumptionCell" destination="rqm-d4-Q2A" id="gS3-aj-Iu0"/>
+                            <outlet property="nameCell" destination="dnO-YR-jNQ" id="tO3-GM-Ftx"/>
+                            <outlet property="priorityCell" destination="Igh-uD-0Q6" id="zXC-wl-qWp"/>
+                            <outlet property="roomCell" destination="fai-wT-DL0" id="BTz-kE-NSq"/>
+                            <outlet property="timerCell" destination="TmH-mP-zcE" id="5Ul-F7-QmB"/>
+                            <outlet property="usingCell" destination="Imf-oZ-JLT" id="Mqp-vx-kyZ"/>
+                        </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Device Details" id="TjJ-xD-7hg">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="fJW-Pv-ddW"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Device Details" id="TjJ-xD-7hg"/>
                     <connections>
-                        <outlet property="editButton" destination="fJW-Pv-ddW" id="KQQ-s2-1gj"/>
+                        <outlet property="deviceTable" destination="QMB-KA-X0e" id="ibI-dR-qtF"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hhg-Zd-w5m" userLabel="First Responder" sceneMemberID="firstResponder"/>
