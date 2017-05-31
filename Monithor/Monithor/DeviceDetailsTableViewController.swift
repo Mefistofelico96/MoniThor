@@ -15,6 +15,7 @@ class DeviceDetailsTableViewController: UITableViewController {
     @IBOutlet var deviceTable: DevicesDetailsTableView!
     @IBOutlet weak var highButton: UIButton!
     @IBAction func highButtonAct(_ sender: Any) {
+        
     }
     @IBOutlet weak var mediumButton: UIButton!
     @IBAction func mediumButtonAct(_ sender: Any) {
@@ -25,18 +26,16 @@ class DeviceDetailsTableViewController: UITableViewController {
         
     }
     @IBOutlet weak var priorityLabel: UILabel!
-    let raspID = "10.20.40.24"
-    
     var editButton: UIBarButtonItem!
     
     public var nome = ""
     public var statoTim = 0
     public var timerOn = ""
     public var timerOff = ""
-    
-    
     public var idNicola = -1
     public var ciabatta = DB_Presa()
+    
+    let raspID = "10.20.40.24"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,9 +82,15 @@ class DeviceDetailsTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         self.deviceTable.reloadData()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         self.deviceTable.reloadData()
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     // Abilita editor
     func edit () {
         nameText.isEnabled = true
@@ -319,6 +324,7 @@ class DeviceDetailsTableViewController: UITableViewController {
         
     }
     
+    // Passaggio dati
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ViewControllerHome {
             destination.presaClass[idNicola].setNome(nameText.text!)

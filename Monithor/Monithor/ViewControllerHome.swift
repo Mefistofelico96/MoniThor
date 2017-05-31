@@ -238,7 +238,6 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showDeviceDetailsHome", sender: nil)
-        //idCellaSelezionata = indexPath.row
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -259,10 +258,8 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
 //            destination2.ciabatta.db_timer.setStatoTimer(presaClass[idCellaSelezionata].db_timer.getStatoTimer)
             destination2.nome = presaClass[idCellaSelezionata].getNome
             destination2.statoTim = presaClass[idCellaSelezionata].db_timer.getStatoTimer
-            
             destination2.timerOn = presaClass[idCellaSelezionata].db_timer.getTimer_on
             destination2.timerOff = presaClass[idCellaSelezionata].db_timer.getTimer_off
-            
             destination2.idNicola = presaClass[idCellaSelezionata].getId
             
         }
