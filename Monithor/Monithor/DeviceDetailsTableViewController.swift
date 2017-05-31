@@ -10,22 +10,12 @@ import UIKit
 
 class DeviceDetailsTableViewController: UITableViewController {
     
+    @IBOutlet var deviceTable: DevicesDetailsTableView!
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var roomText: UITextField!
-    @IBOutlet var deviceTable: DevicesDetailsTableView!
-    @IBOutlet weak var highButton: UIButton!
-    @IBAction func highButtonAct(_ sender: Any) {
-        
-    }
-    @IBOutlet weak var mediumButton: UIButton!
-    @IBAction func mediumButtonAct(_ sender: Any) {
-        
-    }
-    @IBOutlet weak var lowButton: UIButton!
-    @IBAction func lowButtonAct(_ sender: Any) {
-        
-    }
-    @IBOutlet weak var priorityLabel: UILabel!
+    @IBOutlet weak var timerOnText: UITextField!
+    @IBOutlet weak var timerOffText: UITextField!
+    
     var editButton: UIBarButtonItem!
     
     public var nome = ""
@@ -58,15 +48,16 @@ class DeviceDetailsTableViewController: UITableViewController {
             deviceTable.timerCell.switchTimer.isOn = true
         }
         
-        let details = [Details("Name:", ""), Details("Room:", ""), Details("Cathegory:", ""), Details("Priority:", ""), Details("Switch on:", ""), Details("Connected at:", ""), Details("KW/h used:", ""), Details("Actually using:", "")]
+        let details = [Details("Name:", ""), Details("Room:", "Kitchen"), Details("Cathegory:", ""), Details("Priority:", ""), Details("Switch on:", ""), Details("Connected at:", ""), Details("KW/h used:", ""), Details("Actually using:", "")]
 
         title = "\(details[0].stringa2) Device"
-        
-        deviceTable.nameCell.label2.text = nome
         
         self.editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(self.edit))
         navigationItem.rightBarButtonItem = self.editButton
         
+        deviceTable.nameCell.label2.text = nome
+        deviceTable.roomCell.label2.text = "Kitchen"
+        deviceTable.priorityCell.label2.text = "Medium"
         deviceTable.timerCell.label2.text = timerOn
         deviceTable.timerCell.label.text = timerOff
         
@@ -74,9 +65,12 @@ class DeviceDetailsTableViewController: UITableViewController {
         roomText.isEnabled = false
         nameText.isHidden = true
         roomText.isHidden = true
-        highButton.isHidden = true
-        mediumButton.isHidden = true
-        lowButton.isHidden = true
+        
+        deviceTable.priorityCell.label2.isHidden = false
+        deviceTable.priorityCell.highButton.isHidden = true
+        deviceTable.priorityCell.mediumButton.isHidden = true
+        deviceTable.priorityCell.lowButton.isHidden = true
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -93,14 +87,23 @@ class DeviceDetailsTableViewController: UITableViewController {
     
     // Abilita editor
     func edit () {
+        
+        nameText.text! = deviceTable.nameCell.label2.text!
+        roomText.text! = deviceTable.roomCell.label2.text!
+        timerOnText.text! = deviceTable.timerCell.label2.text!
+        timerOffText.text! = deviceTable.timerCell.label.text!
+        
+        
         nameText.isEnabled = true
         roomText.isEnabled = true
         nameText.isHidden = false
         roomText.isHidden = false
-        highButton.isHidden = false
-        mediumButton.isHidden = false
-        lowButton.isHidden = false
-        priorityLabel.isHidden = true
+        
+        deviceTable.priorityCell.label2.isHidden = true
+        deviceTable.priorityCell.highButton.isHidden = false
+        deviceTable.priorityCell.mediumButton.isHidden = false
+        deviceTable.priorityCell.lowButton.isHidden = false
+        
         self.editButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.done))
         navigationItem.rightBarButtonItem = self.editButton
     }
@@ -112,74 +115,28 @@ class DeviceDetailsTableViewController: UITableViewController {
         roomText.isEnabled = false
         nameText.isHidden = true
         roomText.isHidden = true
-        highButton.isHidden = true
-        mediumButton.isHidden = true
-        lowButton.isHidden = true
-        priorityLabel.isHidden = false
+        
+        deviceTable.priorityCell.label2.isHidden = false
+        deviceTable.priorityCell.highButton.isHidden = true
+        deviceTable.priorityCell.mediumButton.isHidden = true
+        deviceTable.priorityCell.lowButton.isHidden = true
+        
         self.editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(self.edit))
         navigationItem.rightBarButtonItem = self.editButton
+        
+        // Funzioni post
         updateName()
+        updateTimerOn()
+        updateTimerOff()
+        
+        // Cambiamento labels
         deviceTable.nameCell.label2.text = nameText.text!
+        deviceTable.roomCell.label2.text = roomText.text!
+        deviceTable.timerCell.label2.text = timerOnText.text!
+        deviceTable.timerCell.label.text = timerOffText.text!
+        
+        // Refresh
         self.deviceTable.reloadData()
-        
-    }
-
-    func updateName () {
-        
-        let URL_Update_nome = "http://\(raspID)/monithor/api/UpdateNome.php"
-        //        URL_Update_nome += "?nome=\(nome)"
-        //        URL_Update_nome += "&id=\(id)"
-        
-        //creating the post parameter by concatenating the keys and values from text field
-        let postParameters = "nome=\(nameText.text!)&id=\(idNicola)";
-        
-        //created NSURL
-        let requestURL = NSURL(string: URL_Update_nome)
-        
-        //creating NSMutableURLRequest
-        let request = NSMutableURLRequest(url: requestURL! as URL)
-        
-        //setting the method to post
-        request.httpMethod = "POST"
-        
-        //adding the parameters to request body
-        request.httpBody = postParameters.data(using: String.Encoding.utf8)
-        
-        
-        //creating a task to send the post request
-        let task = URLSession.shared.dataTask(with: request as URLRequest){
-            data, response, error in
-            
-            if error != nil{
-                print("error is \(String(describing: error))")
-                return;
-            }
-            
-            //parsing the response
-            do {
-                //converting resonse to NSDictionary
-                let myJSON =  try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
-                
-                //parsing the json
-                if let parseJSON = myJSON {
-                    
-                    //creating a string
-                    var msg : String!
-                    
-                    //getting the json response
-                    msg = parseJSON["message"] as! String?
-                    
-                    //printing the response
-                    print(msg)
-                    
-                }
-            } catch {
-                print(error)
-            }
-            
-        }
-        //executing the task
-        task.resume()
         
     }
     
@@ -254,6 +211,167 @@ class DeviceDetailsTableViewController: UITableViewController {
     }
     */
     
+    func updateName () {
+        
+        let URL_Update_nome = "http://\(raspID)/monithor/api/UpdateNome.php"
+        
+        // Creating the post parameter by concatenating the keys and values from text field
+        let postParameters = "nome=\(nameText.text!)&id=\(idNicola)";
+        
+        // Created NSURL
+        let requestURL = NSURL(string: URL_Update_nome)
+        
+        // Creating NSMutableURLRequest
+        let request = NSMutableURLRequest(url: requestURL! as URL)
+        
+        //setting the method to post
+        request.httpMethod = "POST"
+        
+        //adding the parameters to request body
+        request.httpBody = postParameters.data(using: String.Encoding.utf8)
+        
+        
+        //creating a task to send the post request
+        let task = URLSession.shared.dataTask(with: request as URLRequest){
+            data, response, error in
+            
+            if error != nil{
+                print("error is \(String(describing: error))")
+                return;
+            }
+            
+            //parsing the response
+            do {
+                //converting resonse to NSDictionary
+                let myJSON =  try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                
+                //parsing the json
+                if let parseJSON = myJSON {
+                    
+                    //creating a string
+                    var msg : String!
+                    
+                    //getting the json response
+                    msg = parseJSON["message"] as! String?
+                    
+                    //printing the response
+                    print(msg)
+                    
+                }
+            } catch {
+                print(error)
+            }
+            
+        }
+        //executing the task
+        task.resume()
+    }
+    
+    func updateTimerOn () {
+        
+        let URL_Update_TimerOn = "http://\(raspID)/monithor/api/Update_TimerOn.php"
+        
+        //creating the post parameter by concatenating the keys and values from text field
+        let postParameters = "timer_on=\(timerOnText.text!)&id_presa=\(idNicola)"
+        
+        //created NSURL
+        let requestURL = NSURL(string: URL_Update_TimerOn)
+        
+        //creating NSMutableURLRequest
+        let request = NSMutableURLRequest(url: requestURL! as URL)
+        
+        //setting the method to post
+        request.httpMethod = "POST"
+        
+        //adding the parameters to request body
+        request.httpBody = postParameters.data(using: String.Encoding.utf8)
+        
+        //creating a task to send the post request
+        let task = URLSession.shared.dataTask(with: request as URLRequest){
+            data, response, error in
+            
+            if error != nil{
+                print("error is \(String(describing: error))")
+                return;
+            }
+            
+            //parsing the response
+            do {
+                //converting resonse to NSDictionary
+                let myJSON =  try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                
+                //parsing the json
+                if let parseJSON = myJSON {
+                    
+                    //creating a string
+                    var msg : String!
+                    
+                    //getting the json response
+                    msg = parseJSON["message"] as! String?
+                    
+                    //printing the response
+                    print(msg)
+                    
+                }
+            } catch {
+                print(error)
+            }
+            
+        }
+        //executing the task
+        task.resume()
+        
+        
+    }
+    
+    func updateTimerOff () {
+        
+        let URL_Update_TimerOff = "http://\(raspID)/monithor/api/Update_TimerOff.php"
+        
+        //creating the post parameter by concatenating the keys and values from text field
+        let postParameters = "timer_off=\(timerOffText.text!)&id_presa=\(idNicola)"
+        
+        //created NSURL
+        let requestURL = NSURL(string: URL_Update_TimerOff)
+        
+        //creating NSMutableURLRequest
+        let request = NSMutableURLRequest(url: requestURL! as URL)
+        
+        //setting the method to post
+        request.httpMethod = "POST"
+        
+        //adding the parameters to request body
+        request.httpBody = postParameters.data(using: String.Encoding.utf8)
+        
+        //creating a task to send the post request
+        let task = URLSession.shared.dataTask(with: request as URLRequest){
+            data, response, error in
+            
+            if error != nil{
+                print("error is \(String(describing: error))")
+                return;
+            }
+            
+            //parsing the response
+            do {
+                //converting resonse to NSDictionary
+                let myJSON =  try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                
+                // Parsing the json
+                if let parseJSON = myJSON {
+                    var msg: String!
+                    msg = parseJSON["message"] as! String?
+                    print(msg)
+                }
+            } catch {
+                print(error)
+            }
+            
+        }
+        // Executing the task
+        task.resume()
+    }
+    
     @IBAction func switchState(_ sender: Any) {
         
         if statoTim == 0 {
@@ -316,7 +434,21 @@ class DeviceDetailsTableViewController: UITableViewController {
         }
         //executing the task
         task.resume()
-        
+    }
+    
+    @IBAction func highButtonAct(_ sender: Any) {
+        deviceTable.priorityCell.label2.text = "High"
+        // Codice
+    }
+    
+    @IBAction func mediumButtonAct(_ sender: Any) {
+        deviceTable.priorityCell.label2.text = "Medium"
+        // Codice
+    }
+    
+    @IBAction func lowButtonAct(_ sender: Any) {
+        deviceTable.priorityCell.label2.text = "Low"
+        // Codice
     }
     
     @IBAction func categoryButton(_ sender: Any) {

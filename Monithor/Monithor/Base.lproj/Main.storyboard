@@ -1177,8 +1177,11 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="highButton" destination="loX-4e-azi" id="imO-V7-d7H"/>
                                             <outlet property="label1" destination="aF6-Qe-1WH" id="wqm-yO-Iet"/>
                                             <outlet property="label2" destination="xse-ud-LjW" id="MES-hz-pSj"/>
+                                            <outlet property="lowButton" destination="btb-Zt-NLa" id="ooJ-OR-ShR"/>
+                                            <outlet property="mediumButton" destination="9dW-UC-NAx" id="HUC-yh-pvB"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -1228,6 +1231,20 @@
                                                     <color key="textColor" red="0.20784313730000001" green="0.52549019610000003" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qpq-8f-fsw">
+                                                    <rect key="frame" x="96" y="7" width="61" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="thX-CN-7SI">
+                                                    <rect key="frame" x="198" y="7" width="69" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1344,12 +1361,10 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="deviceTable" destination="QMB-KA-X0e" id="ibI-dR-qtF"/>
-                        <outlet property="highButton" destination="loX-4e-azi" id="gzD-w9-rrv"/>
-                        <outlet property="lowButton" destination="btb-Zt-NLa" id="RIP-LW-g3r"/>
-                        <outlet property="mediumButton" destination="9dW-UC-NAx" id="02W-nG-hSv"/>
                         <outlet property="nameText" destination="m3P-yr-stt" id="w5V-Zs-jpU"/>
-                        <outlet property="priorityLabel" destination="xse-ud-LjW" id="p0l-af-j7k"/>
                         <outlet property="roomText" destination="FIj-Jm-5BF" id="JrT-4h-LkI"/>
+                        <outlet property="timerOffText" destination="thX-CN-7SI" id="9LU-1J-m3H"/>
+                        <outlet property="timerOnText" destination="Qpq-8f-fsw" id="rRa-ty-Tqz"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hhg-Zd-w5m" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1378,6 +1393,6 @@
         <image name="reloadTaable" width="21" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3pt-F2-qnR"/>
+        <segue reference="j8Z-j3-KEq"/>
     </inferredMetricsTieBreakers>
 </document>

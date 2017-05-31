@@ -27,7 +27,7 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
     
     var raspIP = "10.20.40.24"
     var idCellaSelezionata = 0
-    var counter = 0
+    var counter = 1
     
     @IBAction func editButton(_ sender: Any) {
         labelUserName.text = "New name:"
