@@ -12,6 +12,10 @@
 		7225900C1ED4455100FB1D25 /* Geotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7225900B1ED4455100FB1D25 /* Geotification.swift */; };
 		7225900E1ED4455700FB1D25 /* GeotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7225900D1ED4455700FB1D25 /* GeotificationsViewController.swift */; };
 		722590101ED4456100FB1D25 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7225900F1ED4456100FB1D25 /* Utilities.swift */; };
+		726481431EDEFA18009ABE0F /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726481401EDEFA18009ABE0F /* Chart.swift */; };
+		726481441EDEFA18009ABE0F /* ChartColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726481411EDEFA18009ABE0F /* ChartColors.swift */; };
+		726481451EDEFA18009ABE0F /* ChartSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726481421EDEFA18009ABE0F /* ChartSeries.swift */; };
+		726481471EDEFBDC009ABE0F /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726481461EDEFBDC009ABE0F /* StatisticsViewController.swift */; };
 		727EB7A01EC9E02E004ECC4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727EB79F1EC9E02E004ECC4F /* AppDelegate.swift */; };
 		727EB7A21EC9E02E004ECC4F /* ViewControllerHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727EB7A11EC9E02E004ECC4F /* ViewControllerHome.swift */; };
 		727EB7A71EC9E02E004ECC4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 727EB7A61EC9E02E004ECC4F /* Assets.xcassets */; };
@@ -41,12 +45,29 @@
 		DF86EF141ECB487700520766 /* ViewControllerNewPowerStrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF86EF131ECB487700520766 /* ViewControllerNewPowerStrip.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7264812F1EDEF745009ABE0F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		7217511A1ECF39B500126E41 /* RadiusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusCell.swift; sourceTree = "<group>"; };
 		722590091ED4453A00FB1D25 /* AddGeotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGeotificationViewController.swift; sourceTree = "<group>"; };
 		7225900B1ED4455100FB1D25 /* Geotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geotification.swift; sourceTree = "<group>"; };
 		7225900D1ED4455700FB1D25 /* GeotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeotificationsViewController.swift; sourceTree = "<group>"; };
 		7225900F1ED4456100FB1D25 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		726481401EDEFA18009ABE0F /* Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
+		726481411EDEFA18009ABE0F /* ChartColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartColors.swift; sourceTree = "<group>"; };
+		726481421EDEFA18009ABE0F /* ChartSeries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartSeries.swift; sourceTree = "<group>"; };
+		726481461EDEFBDC009ABE0F /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		727EB79C1EC9E02E004ECC4F /* Monithor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monithor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		727EB79F1EC9E02E004ECC4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		727EB7A11EC9E02E004ECC4F /* ViewControllerHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHome.swift; sourceTree = "<group>"; };
@@ -103,6 +124,16 @@
 			name = GeoFence;
 			sourceTree = "<group>";
 		};
+		7264813F1EDEFA18009ABE0F /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				726481401EDEFA18009ABE0F /* Chart.swift */,
+				726481411EDEFA18009ABE0F /* ChartColors.swift */,
+				726481421EDEFA18009ABE0F /* ChartSeries.swift */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
 		727EB7931EC9E02E004ECC4F = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +154,7 @@
 		727EB79E1EC9E02E004ECC4F /* Monithor */ = {
 			isa = PBXGroup;
 			children = (
+				7264813F1EDEFA18009ABE0F /* Charts */,
 				722590081ED444D800FB1D25 /* GeoFence */,
 				DF86EF061ECB472C00520766 /* Model */,
 				DF86EF071ECB473D00520766 /* View */,
@@ -154,7 +186,6 @@
 				72FBD0FB1ED5C04900E64878 /* DB_Timer.swift */,
 				980C9CA21EDC6E3F00829C19 /* DB_Priorita.swift */,
 				985A31E41EDD630000A183B2 /* DB_Misura_Generica.swift */,
-				72FF64551EDD7A6A00A34725 /* DevicesDetailsTableView.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -163,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				DF097B6B1ECC75AE005CF694 /* TableViewCellPowerStrip.swift */,
+				72FF64551EDD7A6A00A34725 /* DevicesDetailsTableView.swift */,
 				DF097B6D1ECC79CB005CF694 /* TableViewCellPowerStripDetails.swift */,
 				DF097B6F1ECC827C005CF694 /* CollectionViewCellCathegories.swift */,
 				DF097B781ECDF207005CF694 /* TableViewCellHome.swift */,
@@ -175,6 +207,7 @@
 		DF86EF081ECB474500520766 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				726481461EDEFBDC009ABE0F /* StatisticsViewController.swift */,
 				727EB7A11EC9E02E004ECC4F /* ViewControllerHome.swift */,
 				DF86EF091ECB476400520766 /* ViewControllerPowerStrip.swift */,
 				DF86EF0B1ECB47BE00520766 /* ViewControllerPowerStripDetails.swift */,
@@ -197,6 +230,7 @@
 				727EB7981EC9E02E004ECC4F /* Sources */,
 				727EB7991EC9E02E004ECC4F /* Frameworks */,
 				727EB79A1EC9E02E004ECC4F /* Resources */,
+				7264812F1EDEF745009ABE0F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -267,7 +301,9 @@
 				72FF64561EDD7A6A00A34725 /* DevicesDetailsTableView.swift in Sources */,
 				7225900A1ED4453A00FB1D25 /* AddGeotificationViewController.swift in Sources */,
 				DF86EF0A1ECB476400520766 /* ViewControllerPowerStrip.swift in Sources */,
+				726481471EDEFBDC009ABE0F /* StatisticsViewController.swift in Sources */,
 				72B38E271ED5B9A8003FED6D /* Details.swift in Sources */,
+				726481431EDEFA18009ABE0F /* Chart.swift in Sources */,
 				980C9CA31EDC6E3F00829C19 /* DB_Priorita.swift in Sources */,
 				DF097B7D1ECF1990005CF694 /* ViewControllerSettingsDetails.swift in Sources */,
 				727EB7A21EC9E02E004ECC4F /* ViewControllerHome.swift in Sources */,
@@ -275,6 +311,7 @@
 				7225900C1ED4455100FB1D25 /* Geotification.swift in Sources */,
 				DF86EF141ECB487700520766 /* ViewControllerNewPowerStrip.swift in Sources */,
 				DF86EF0E1ECB480100520766 /* ViewControllerCathegories.swift in Sources */,
+				726481441EDEFA18009ABE0F /* ChartColors.swift in Sources */,
 				72FF64541EDD796C00A34725 /* DeviceDetailsTableViewController.swift in Sources */,
 				7225900E1ED4455700FB1D25 /* GeotificationsViewController.swift in Sources */,
 				DF097B6C1ECC75AE005CF694 /* TableViewCellPowerStrip.swift in Sources */,
@@ -285,6 +322,7 @@
 				72FBD0FC1ED5C04900E64878 /* DB_Timer.swift in Sources */,
 				727EB7A01EC9E02E004ECC4F /* AppDelegate.swift in Sources */,
 				722590101ED4456100FB1D25 /* Utilities.swift in Sources */,
+				726481451EDEFA18009ABE0F /* ChartSeries.swift in Sources */,
 				72B38E251ED5B7C9003FED6D /* DeviceDetailsCell.swift in Sources */,
 				DF86EF121ECB485400520766 /* ViewControllerSettings.swift in Sources */,
 			);

@@ -21,6 +21,8 @@ class TableViewCellHome: UITableViewCell {
     public var idCharlie = -1
     public var statoFromHome = 0
     public var statoTimer = 0
+    public var quando = ""
+    public var lettura = 0
     
     var raspIP = "10.20.40.24"
     

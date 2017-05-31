@@ -24,14 +24,16 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
     
     var presaClass = [DB_Presa]()
     var timerClass = [DB_Timer]()
+    var misuraClassM = [DB_Misura]()
     
     var raspIP = "10.20.40.24"
     var idCellaSelezionata = 0
     var counter = 1
     
     @IBAction func editButton(_ sender: Any) {
-        labelUserName.text = "New name:"
+        labelUserName.text = "User"
         newNameTextfield.isHidden = false
+        newNameTextfield.text! = labelUserName.text!
         doneButtonOutlet.isHidden = false
         editButtonOutlet.isHidden = true
     }
@@ -135,8 +137,13 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
                     self.getTimer(i)
                     
                 }
-                self.homeTableView.reloadData()
-                self.view.setNeedsDisplay()
+                DispatchQueue.main.async {
+                    self.homeTableView.reloadData()
+                    self.view.setNeedsDisplay()
+                }
+                
+                self.getMisure()
+                
             } catch {
                 print(error)
             }
@@ -186,7 +193,7 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
                     var timerOn = ""
                     var timerOff = ""
                     timerOn = timers[j]["timer_on"] as! String!
-                    timerOff = timers[j]["timer_on"] as! String!
+                    timerOff = timers[j]["timer_off"] as! String!
                     
                     let indextimerOn = timerOn.index(timerOn.startIndex, offsetBy: 5)
                     timerOn = timerOn.substring(to: indextimerOn)
@@ -203,13 +210,77 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
                     self.presaClass[i].db_timer = timer
                     
                 }
-                self.homeTableView.reloadData()
-                self.view.setNeedsDisplay()
+                DispatchQueue.main.async {
+                    self.tableViewHome.reloadData()
+                    self.tableViewHome.setNeedsDisplay()
+                    self.homeTableView.reloadData()
+                    self.homeTableView.setNeedsDisplay()
+                    self.view.setNeedsDisplay()
+                }
             } catch {
                 print(error)
             }
         }
         // Executing the task
+        task.resume()
+    }
+    
+    func getMisure () {
+        
+        //Our web service url
+        let URL_GET_Misura_m:String = "http://\(raspIP)/monithor/api/GetMisura_m.php"
+        
+        //created NSURL
+        let requestURL = NSURL(string: URL_GET_Misura_m)
+        
+        //creating NSMutableURLRequest
+        let request = NSMutableURLRequest(url: requestURL! as URL)
+        
+        //setting the method to post
+        request.httpMethod = "GET"
+        
+        //creating a task to send the post request
+        let task = URLSession.shared.dataTask(with: request as URLRequest){
+            data, response, error in
+            
+            //exiting if there is some error
+            if error != nil{
+                print("error is \(String(describing: error))")
+                return;
+            }
+            
+            //parsing the response
+            do {
+                //converting resonse to NSDictionary
+                var prioritaJSON: NSDictionary!
+                prioritaJSON =  try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                
+                let misura_m = prioritaJSON["misura_m"] as! [NSDictionary]
+                dump(misura_m)
+                //looping through all the json objects in the array teams
+                for i in 0 ..< misura_m.count{
+                    
+                    //getting the data at each index
+                    let misuraM = DB_Misura()
+                    misuraM.setIDPresa(misura_m[i]["id_presa"] as! Int!)
+                    misuraM.setLettura(misura_m[i]["lettura"] as! Int!)
+                    misuraM.setQuando(misura_m[i]["quando"] as! String!)
+                    self.misuraClassM.append(misuraM)
+                    
+                }
+                
+                DispatchQueue.main.async {
+                    self.tableViewHome.reloadData()
+                    self.tableViewHome.setNeedsDisplay()
+                    self.homeTableView.reloadData()
+                    self.homeTableView.setNeedsDisplay()
+                    self.view.setNeedsDisplay()
+                }
+            } catch {
+                print(error)
+            }
+        }
+        //executing the task
         task.resume()
     }
     
@@ -229,6 +300,10 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
         }
         else {
             aCell.statusButton.imageView?.image = #imageLiteral(resourceName: "Power Button ON")
+        }
+        
+        if misuraClassM.count > indexPath.row {
+            aCell.connectedTime.text = misuraClassM[indexPath.row].getQuando
         }
         
         aCell.idCharlie = indexPath.row
@@ -251,7 +326,8 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
         if let destination1 = segue.destination as? TableViewCellHome {
             destination1.statoFromHome = presaClass[idCellaSelezionata].getStato
             destination1.statoTimer = timerClass[idCellaSelezionata].getStatoTimer
-            
+            destination1.quando = misuraClassM[idCellaSelezionata].getQuando
+            destination1.lettura = misuraClassM[idCellaSelezionata].getLettura
         }
         if let destination2 = segue.destination as? DeviceDetailsTableViewController {
 //            destination2.ciabatta.setNome(presaClass[idCellaSelezionata].getNome)
@@ -261,7 +337,8 @@ class ViewControllerHome: UIViewController, UITableViewDataSource, UITableViewDe
             destination2.timerOn = presaClass[idCellaSelezionata].db_timer.getTimer_on
             destination2.timerOff = presaClass[idCellaSelezionata].db_timer.getTimer_off
             destination2.idNicola = presaClass[idCellaSelezionata].getId
-            
+            destination2.quando = misuraClassM[idCellaSelezionata].getQuando
+            destination2.lettura = misuraClassM[idCellaSelezionata].getLettura
         }
         
     }

@@ -23,13 +23,39 @@ class DeviceDetailsTableViewController: UITableViewController {
     public var timerOn = ""
     public var timerOff = ""
     public var idNicola = -1
-    public var ciabatta = DB_Presa()
+    //public var ciabatta = DB_Presa()
+    
+    public var lettura = 0
+    public var quando = ""
     
     let raspID = "10.20.40.24"
+    var plugTypes: [Cathegory] = []
+    public var idPlug = 0
+    
+    func setCathegory () {
+        plugTypes.append(Cathegory(name: "Coffee Machine", image: #imageLiteral(resourceName: "CoffeeMachine")))
+        plugTypes.append(Cathegory(name: "Washing Machine", image: #imageLiteral(resourceName: "WashingMachine")))
+        plugTypes.append(Cathegory(name: "Air Cooler", image: #imageLiteral(resourceName: "Cooler")))
+        plugTypes.append(Cathegory(name: "TV", image: #imageLiteral(resourceName: "TV")))
+        plugTypes.append(Cathegory(name: "Game Console", image: #imageLiteral(resourceName: "PS4")))
+        plugTypes.append(Cathegory(name: "Vacuum Cleaner", image: #imageLiteral(resourceName: "Vacuum")))
+        plugTypes.append(Cathegory(name: "Dish Washer", image: #imageLiteral(resourceName: "Dishwasher")))
+        plugTypes.append(Cathegory(name: "Printer", image: #imageLiteral(resourceName: "Copymachine")))
+        plugTypes.append(Cathegory(name: "PC", image: #imageLiteral(resourceName: "PC")))
+        plugTypes.append(Cathegory(name: "Mobile Phone", image: #imageLiteral(resourceName: "iPhone")))
+        plugTypes.append(Cathegory(name: "Alarm", image: #imageLiteral(resourceName: "Alarm")))
+        plugTypes.append(Cathegory(name: "Heater", image: #imageLiteral(resourceName: "Heater")))
+        plugTypes.append(Cathegory(name: "Lamp", image: #imageLiteral(resourceName: "Lamp")))
+        plugTypes.append(Cathegory(name: "Name", image: #imageLiteral(resourceName: "Air cond")))
+        plugTypes.append(Cathegory(name: "Mac Charger", image: #imageLiteral(resourceName: "Mac Charger")))
+        plugTypes.append(Cathegory(name: "Food Steamer", image: #imageLiteral(resourceName: "Bimby")))
+        plugTypes.append(Cathegory(name: "Telephone", image: #imageLiteral(resourceName: "Telephone")))
+        plugTypes.append(Cathegory(name: "CD Player", image: #imageLiteral(resourceName: "CD Player")))
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setCathegory()
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         self.view.backgroundColor = UIColor(red: 245/255, green: 254/255, blue: 247/255, alpha: 1.0)
@@ -61,21 +87,31 @@ class DeviceDetailsTableViewController: UITableViewController {
         deviceTable.timerCell.label2.text = timerOn
         deviceTable.timerCell.label.text = timerOff
         
+        deviceTable.consumptionCell.label2.text = String(format: "%.2f", Float(abs(lettura)) / 10000)
+        deviceTable.connectedCell.label2.text = quando
+        
         nameText.isEnabled = false
         roomText.isEnabled = false
         nameText.isHidden = true
         roomText.isHidden = true
+        deviceTable.cathegoryCell.label2.text = plugTypes[idPlug].name
+        deviceTable.cathegoryCell.categoryButton.imageView?.image = plugTypes[idPlug].image
         
         deviceTable.priorityCell.label2.isHidden = false
         deviceTable.priorityCell.highButton.isHidden = true
         deviceTable.priorityCell.mediumButton.isHidden = true
         deviceTable.priorityCell.lowButton.isHidden = true
         
+        deviceTable.timerCell.label2.isHidden = false
+        deviceTable.timerCell.label.isHidden = false
+        timerOnText.isHidden = true
+        timerOffText.isHidden = true
+        
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        self.deviceTable.reloadData()
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        self.deviceTable.reloadData()
+//    }
     
     override func viewWillAppear(_ animated: Bool) {
         self.deviceTable.reloadData()
@@ -93,7 +129,6 @@ class DeviceDetailsTableViewController: UITableViewController {
         timerOnText.text! = deviceTable.timerCell.label2.text!
         timerOffText.text! = deviceTable.timerCell.label.text!
         
-        
         nameText.isEnabled = true
         roomText.isEnabled = true
         nameText.isHidden = false
@@ -103,6 +138,11 @@ class DeviceDetailsTableViewController: UITableViewController {
         deviceTable.priorityCell.highButton.isHidden = false
         deviceTable.priorityCell.mediumButton.isHidden = false
         deviceTable.priorityCell.lowButton.isHidden = false
+        
+        deviceTable.timerCell.label2.isHidden = true
+        deviceTable.timerCell.label.isHidden = true
+        timerOnText.isHidden = false
+        timerOffText.isHidden = false
         
         self.editButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.done))
         navigationItem.rightBarButtonItem = self.editButton
@@ -120,6 +160,11 @@ class DeviceDetailsTableViewController: UITableViewController {
         deviceTable.priorityCell.highButton.isHidden = true
         deviceTable.priorityCell.mediumButton.isHidden = true
         deviceTable.priorityCell.lowButton.isHidden = true
+        
+        deviceTable.timerCell.label2.isHidden = false
+        deviceTable.timerCell.label.isHidden = false
+        timerOnText.isHidden = true
+        timerOffText.isHidden = true
         
         self.editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(self.edit))
         navigationItem.rightBarButtonItem = self.editButton

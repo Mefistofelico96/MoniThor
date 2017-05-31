@@ -9,8 +9,10 @@
 import UIKit
 
 class ViewControllerCathegories: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource  {
-
+    
     var plugTypes: [Cathegory] = []
+    var idScelto = 0
+    
     func setCathegory() {
         plugTypes.append(Cathegory(name: "Coffee Machine", image: #imageLiteral(resourceName: "CoffeeMachine")))
         plugTypes.append(Cathegory(name: "Washing Machine", image: #imageLiteral(resourceName: "WashingMachine")))
@@ -55,11 +57,18 @@ class ViewControllerCathegories: UIViewController, UICollectionViewDelegate, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        idScelto = indexPath.row
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? DeviceDetailsTableViewController {
+            destination.idPlug = idScelto
+            
+        }
     }
     
 }
