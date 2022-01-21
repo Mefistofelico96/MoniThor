@@ -1,3 +1,2 @@
-# Pipsqueaks Team
-
-Second mini-challenge project.
+# MoniThor
+Second mini-challenge project by Pipsqueaks.
