@@ -1,2 +1,2 @@
 # MoniThor
-Second mini-challenge project by Pipsqueaks.
+Pipsqeaks' second mini-challenge
